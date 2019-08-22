@@ -74,6 +74,7 @@
 	  	\item \textbf{Autónomos.} Mantienen sus propias bases de datos, utilizando paquetes de programas que facilitan su uso.
 	  	
 	  \end{itemize}
+  
       \item Indica las principales características de los modelos de
       datos más representativos. ¿Cuáles serían las diferencias
       entre los  modelos relacional, orientado a objetos,
@@ -85,10 +86,39 @@
       \textbf{Modelo Semiestructurado.} Es una colección de nodos y
       cada nodo tiene datos con diferentes esquemas, esto lo hace un 
       sistema menos rígido.\\
-      \textbf{Objeto-Relacional} Representa los datos como tablas,
+      \textbf{Modelo Objeto-Relacional} Representa los datos como tablas,
       permite construir tipos de objetos complejos, capacidad para
       encapsular y asociar métodos a los objetos.
-      \item 
+      
+      \item Supón  que  un banco pequeño desea  almacenar  su
+      información  en una  base  de  datos  y  le gustaría comprar
+      el SMBD que  tenga  la  menor  cantidad  de  características
+      posibles. Está interesado en ejecutar la aplicación en una sola computadora personal y no se planea compartir la 
+      información  con  nadie.  Para  cada  una  de  las
+      siguientes  características  explica  por  qué  se debería o
+      no incluir en el SMBD que se desea comprar (suponiendo que se
+      pueden comprar por separado): \textbf{seguridad, control de
+      concurrencia, recuperación en caso de fallas, lenguaje de
+      consulta, mecanismo de vistas, manejo de transacciones}\\
+      \textbf{Seguridad:} Es necesario comprarlo, ya que no quieren
+      compartir la información con nadie, por lo tanto los datos
+      se deben proteger y evitar que cualquiera pueda acceder a 
+      ellos.\\
+      \textbf{Control de concurrencia:} No se necesita incluir ya que
+      se planea ejecutar la aplicación en una sola computadora 
+      personal, por lo que el control de concurrencia sería 
+      completamente innecesario si no va a ser utilizados por varias
+      personas a la vez.\\
+      \textbf{Recuperación en caso de fallas:} Es necesario, ya que
+      la aplicación solo funcionará en una sola computadora personal,
+      por lo que si hubiera algún tipo de falla, toda la información
+      se perdería y no habría ningún otro lugar para recuperarlo.\\
+      \textbf{Lenguaje de consulta:} Es necesario, para poder acceder,
+      actualizar y guardar los datos en la base de datos.\\
+      \textbf{Mecanismo de vista}\\
+      \textbf{Manejo de transacciones}No es necesario\\
+      
+      
 	   	
  \end{enumerate}
 \end {document}
