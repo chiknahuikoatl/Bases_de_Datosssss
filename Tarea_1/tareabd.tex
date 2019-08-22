@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}
+\usepackage[paper=a4paper,margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\graphicspath{img/ }
+\usepackage{booktabs} 
+\usepackage{lipsum} 
+\graphicspath{{img/}}
+\usepackage{multirow}
+\usepackage[dvipsnames]{xcolor}
+\input{kvmacros}
+
+\begin {document}
+\begin{enumerate}
+	\item ¿Por qué elegirías almacenar datos en un sistema de base
+	 de datos en lugar de simplemente almacenarlos utilizando el
+	 sistema de archivos de un sistema operativo? ¿En qué casos no
+	 tendría sentido utilizar un sistema de base de datos?\\
+	 
+	 No podría guardar cantidades grandes de información, el acceso
+	 y las busquedas de información grandes	toman demasiado tiempo
+	 en un sistema de archivos.Tampoco se pueden ordenar y actualizar
+	 constantemente, tampoco podría modificar el esquema de la base
+	 de datos sin tener que modificar completamente los archivos.\\
+	 El sistema de archivos no es seguro incluso con un sistema
+	 de contraseñas ya que no podemos asegurar la integridad de los
+	 datos. No es dinámico, para que más personas tuvieran acceso a
+	 mi base de datos tendría que pasarles los datos manualmente, lo cual es muy ineficiente.\\
+	 No tendría sentido usar una base de datos cuando se tienen muy 
+	 pocos datos a guardar.
+	 
+	\item ¿Qué ventajas y desventajas encuentras al trabajar con una
+	 base de datos?\\
+	 \textbf{Ventajas:}
+	 \begin{itemize}
+	 	\item Se pueden sincronizar datos en ella
+	 	\item Se puede modificar la estructura fácilmente
+	 	\item Garantizan la fiabilidad
+	 	\item Existen por un periodo largo de tiempo
+	 	\item Permite controlar la redundancia 
+	 	\item Son independientes a los programas que proporcionan las
+	 	vistas.
+	 \end{itemize}
+ 	 \textbf{Desventajas:}
+ 	 \begin{itemize}
+ 	 	\item Son costosas.
+ 	 	\item No cualquiera puede manejarla, se necesita alguien 
+ 	 	especializado.
+ 	 	\item Se requiere de capacitación para su manejo.
+ 	 \end{itemize}
+	 \item Investiga  cuáles  serían  los distintos tipos de
+	  usuarios finales de una base de datos, indica las principales
+	  actividades que realizaría cada uno de ellos. \\\\
+	  \textbf{Usuarios Finales.} Acceden a la base de datos desde
+	  alguna terminal, pueden utilizar un lenguaje de consultar o un
+	  programa de aplicación. Tenemos distintos tipos de usuarios 
+	  finales:
+	  \begin{itemize}
+	  	\item \textbf{Esporádicos.} Acceden de vez en cuando, no 
+	  	siempre requieren la misma información. Utilizan lenguajes
+	  	sofisticados de consulta para especificar su solicitud.\\
+	  	\item \textbf{Paramétricos.} Estos usuarios hacen consultas
+	  	y actualizan la base de datos constantemente, no necesitan
+	  	aprender del lenguaje de consultas, ya que normalmente 
+	  	utilizan una interfaz gráfica diseñada para ese propósito.
+	  	\item \textbf{Sofisticados o avanzados.} Son profesionales,
+	  	tales como ingenieros, científicos y otros que están muy 
+	  	familiarizados con el sistemas manejador de bases de datos.
+	  	Estos usuarios suelen hacer uso de sus conocimientos para
+	  	satisfacer requerimientos complejos.
+	  	\item \textbf{Autónomos.} Mantienen sus propias bases de datos, utilizando paquetes de programas que facilitan su uso.
+	  	
+	  \end{itemize}
+      \item Indica las principales características de los modelos de
+      datos más representativos. ¿Cuáles serían las diferencias
+      entre los  modelos relacional, orientado a objetos,
+      semiestructurado y objeto –relacional?\\
+      \textbf{Modelo Relacional.}Los datos se perciben como tablas,
+      es un sistema cerrado, todas las operaciones son siempre tablas.\\
+      \textbf{Modelo Orientado a Objetos.} Los datos se modelan como
+      objetos, se tiene comportamiento (métodos o funciones) y estado.\\
+      \textbf{Modelo Semiestructurado.} Es una colección de nodos y
+      cada nodo tiene datos con diferentes esquemas, esto lo hace un 
+      sistema menos rígido.\\
+      \textbf{Objeto-Relacional} Representa los datos como tablas,
+      permite construir tipos de objetos complejos, capacidad para
+      encapsular y asociar métodos a los objetos.
+      \item 
+	   	
+ \end{enumerate}
+\end {document}
+	 
