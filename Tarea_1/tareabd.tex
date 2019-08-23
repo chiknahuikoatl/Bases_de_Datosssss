@@ -6,8 +6,8 @@
 \usepackage{enumerate}
 \usepackage{graphicx}
 \graphicspath{img/ }
-\usepackage{booktabs} 
-\usepackage{lipsum} 
+\usepackage{booktabs}
+\usepackage{lipsum}
 \graphicspath{{img/}}
 \usepackage{multirow}
 \usepackage[dvipsnames]{xcolor}
@@ -19,7 +19,7 @@
 	 de datos en lugar de simplemente almacenarlos utilizando el
 	 sistema de archivos de un sistema operativo? ¿En qué casos no
 	 tendría sentido utilizar un sistema de base de datos?\\
-	 
+
 	 No podría guardar cantidades grandes de información, el acceso
 	 y las busquedas de información grandes	toman demasiado tiempo
 	 en un sistema de archivos.Tampoco se pueden ordenar y actualizar
@@ -29,9 +29,9 @@
 	 de contraseñas ya que no podemos asegurar la integridad de los
 	 datos. No es dinámico, para que más personas tuvieran acceso a
 	 mi base de datos tendría que pasarles los datos manualmente, lo cual es muy ineficiente.\\
-	 No tendría sentido usar una base de datos cuando se tienen muy 
+	 No tendría sentido usar una base de datos cuando se tienen muy
 	 pocos datos a guardar.
-	 
+
 	\item ¿Qué ventajas y desventajas encuentras al trabajar con una
 	 base de datos?\\
 	 \textbf{Ventajas:}
@@ -40,14 +40,14 @@
 	 	\item Se puede modificar la estructura fácilmente
 	 	\item Garantizan la fiabilidad
 	 	\item Existen por un periodo largo de tiempo
-	 	\item Permite controlar la redundancia 
+	 	\item Permite controlar la redundancia
 	 	\item Son independientes a los programas que proporcionan las
 	 	vistas.
 	 \end{itemize}
  	 \textbf{Desventajas:}
  	 \begin{itemize}
  	 	\item Son costosas.
- 	 	\item No cualquiera puede manejarla, se necesita alguien 
+ 	 	\item No cualquiera puede manejarla, se necesita alguien
  	 	especializado.
  	 	\item Se requiere de capacitación para su manejo.
  	 \end{itemize}
@@ -56,25 +56,25 @@
 	  actividades que realizaría cada uno de ellos. \\\\
 	  \textbf{Usuarios Finales.} Acceden a la base de datos desde
 	  alguna terminal, pueden utilizar un lenguaje de consultar o un
-	  programa de aplicación. Tenemos distintos tipos de usuarios 
+	  programa de aplicación. Tenemos distintos tipos de usuarios
 	  finales:
 	  \begin{itemize}
-	  	\item \textbf{Esporádicos.} Acceden de vez en cuando, no 
+	  	\item \textbf{Esporádicos.} Acceden de vez en cuando, no
 	  	siempre requieren la misma información. Utilizan lenguajes
 	  	sofisticados de consulta para especificar su solicitud.\\
 	  	\item \textbf{Paramétricos.} Estos usuarios hacen consultas
 	  	y actualizan la base de datos constantemente, no necesitan
-	  	aprender del lenguaje de consultas, ya que normalmente 
+	  	aprender del lenguaje de consultas, ya que normalmente
 	  	utilizan una interfaz gráfica diseñada para ese propósito.
 	  	\item \textbf{Sofisticados o avanzados.} Son profesionales,
-	  	tales como ingenieros, científicos y otros que están muy 
+	  	tales como ingenieros, científicos y otros que están muy
 	  	familiarizados con el sistemas manejador de bases de datos.
 	  	Estos usuarios suelen hacer uso de sus conocimientos para
 	  	satisfacer requerimientos complejos.
 	  	\item \textbf{Autónomos.} Mantienen sus propias bases de datos, utilizando paquetes de programas que facilitan su uso.
-	  	
+
 	  \end{itemize}
-  
+
       \item Indica las principales características de los modelos de
       datos más representativos. ¿Cuáles serían las diferencias
       entre los  modelos relacional, orientado a objetos,
@@ -84,16 +84,16 @@
       \textbf{Modelo Orientado a Objetos.} Los datos se modelan como
       objetos, se tiene comportamiento (métodos o funciones) y estado.\\
       \textbf{Modelo Semiestructurado.} Es una colección de nodos y
-      cada nodo tiene datos con diferentes esquemas, esto lo hace un 
+      cada nodo tiene datos con diferentes esquemas, esto lo hace un
       sistema menos rígido.\\
       \textbf{Modelo Objeto-Relacional} Representa los datos como tablas,
       permite construir tipos de objetos complejos, capacidad para
       encapsular y asociar métodos a los objetos.
-      
+
       \item Supón  que  un banco pequeño desea  almacenar  su
       información  en una  base  de  datos  y  le gustaría comprar
       el SMBD que  tenga  la  menor  cantidad  de  características
-      posibles. Está interesado en ejecutar la aplicación en una sola computadora personal y no se planea compartir la 
+      posibles. Está interesado en ejecutar la aplicación en una sola computadora personal y no se planea compartir la
       información  con  nadie.  Para  cada  una  de  las
       siguientes  características  explica  por  qué  se debería o
       no incluir en el SMBD que se desea comprar (suponiendo que se
@@ -102,11 +102,11 @@
       consulta, mecanismo de vistas, manejo de transacciones}\\
       \textbf{Seguridad:} Es necesario comprarlo, ya que no quieren
       compartir la información con nadie, por lo tanto los datos
-      se deben proteger y evitar que cualquiera pueda acceder a 
+      se deben proteger y evitar que cualquiera pueda acceder a
       ellos.\\
       \textbf{Control de concurrencia:} No se necesita incluir ya que
-      se planea ejecutar la aplicación en una sola computadora 
-      personal, por lo que el control de concurrencia sería 
+      se planea ejecutar la aplicación en una sola computadora
+      personal, por lo que el control de concurrencia sería
       completamente innecesario si no va a ser utilizados por varias
       personas a la vez.\\
       \textbf{Recuperación en caso de fallas:} Es necesario, ya que
@@ -117,9 +117,11 @@
       actualizar y guardar los datos en la base de datos.\\
       \textbf{Mecanismo de vista}\\
       \textbf{Manejo de transacciones}No es necesario\\
-      
-      
-	   	
+
+
+
  \end{enumerate}
+\begin{thebibliography}
+\bibitem{DBA}{https://pt.wikipedia.org/wiki/Administrador_de_banco_de_dados}
+\end{thebibliography}
 \end {document}
-	 
