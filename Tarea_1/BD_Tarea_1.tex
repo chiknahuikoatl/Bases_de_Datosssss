@@ -5,10 +5,17 @@
 \usepackage{booktabs}
 \usepackage{amssymb}
 \usepackage{bussproofs}
-
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{amsmath}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
 
 \pagestyle{fancy}
 \lhead{Almeida, Figueroa \& Ibarra}
@@ -82,7 +89,17 @@
  	 	especializado.
  	 	\item Se requiere de capacitación para su manejo.
  	 \end{itemize} }%Pregunta E.%
-    \item[c)]{}
+    \item[c)]{Investiga cuáles serían las responsabilidades de un DBA y las de
+                un diseñador de bases de datos.\\
+        Entre las responsabilidades de un administrador de bases de datos se
+        encuentran la instalación y actualización de las herramientas de administración,
+        el desarrollo de respaldos y pruebas para recuperar la información de la BD,
+        saber modificar el esquema de la BD, velar por su integridad, garantizar
+        acceso continuo todo el tiempo que sea posible y el mejor desempeño de la BD
+        entre otras cosas tipo mantenimiento y así.\cite{DBA}\\
+        Por su parte, un diseñador de bases de datos se encarga de determinar qué
+        información va a ser almacenada y cómo se relacionan los datos entre ellos.
+        Finalmente, se estructuran los datos logicamente.}
     \item[d)]{Investiga  cuáles  serían  los distintos tipos de
      usuarios finales de una base de datos, indica las principales
      actividades que realizaría cada uno de ellos. \\\\
@@ -161,4 +178,16 @@
 \end{enumerate}
 }
 \end{enumerate}
+\begin{thebibliography}{3}
+    \bibitem[DBA]{DBA}
+        Wikipedia. (2019).\\
+        Administrador de Banco de Dados.\\
+        Visitado el 22 de agosto del 2019.\\
+        \url{https://pt.wikipedia.org/wiki/Administrador_de_banco_de_dados}
+    \bibitem[DBD]{DBD}
+        Wikipedia. (2019).\\
+        Database design.\\
+        Visitado el 23 de agosto del 2019.\\
+        \url{https://en.wikipedia.org/wiki/Database_design}
+\end{thebibliography}
 \end{document}
