@@ -89,18 +89,34 @@
  	 	especializado.
  	 	\item Se requiere de capacitación para su manejo.
  	 \end{itemize} }%Pregunta E.%
-    \item[c)]{Investiga cuáles serían las responsabilidades de un DBA y las de
-                un diseñador de bases de datos.\\
-        Entre las responsabilidades de un administrador de bases de datos se
-        encuentran la instalación y actualización de las herramientas de administración,
-        el desarrollo de respaldos y pruebas para recuperar la información de la BD,
-        saber modificar el esquema de la BD, velar por su integridad, garantizar
-        acceso continuo todo el tiempo que sea posible y el mejor desempeño de la BD
-        entre otras cosas tipo mantenimiento y así.\cite{DBA}\\
-        Por su parte, un diseñador de bases de datos se encarga de determinar qué
-        información va a ser almacenada y cómo se relacionan los datos entre ellos.
-        Finalmente, se estructuran los datos logicamente. }
-    \item[d)]{Investiga  cuáles  serían  los distintos tipos de
+
+    \item[c)] Investiga cuáles serían las responsabilidades de un DBA y las de un diseñador de bases de datos.\\
+    \textbf{Responsabilidades de un DBA:}
+    \begin{itemize}
+    	\item Hacer copias de seguridad y la recuperación de estas:\\
+    	El administrador debe hacer copias de seguridad periódicas y tener conocimiento completo del procedimiento de restauracíon.
+    	\item La Supervisión de la actividad de las bases de datos:\\
+    	El administrador debe de saber cuándo se producen retrotracciones de transacciones, cuándo  la base de datos supera el espacio en disco del sistema, cuándo no se respetan restricciones exclusivas o cuándo no se debe cerrar la base de datos mientras la aplicación se está ejecutando por mencionar algunas.
+    	\item Checar el Rendimiento:\\
+    	El administrador debe actuar de inmediato cuando se ven problemas con el rendimiento , supervisar cuándo realiza la base de datos una retrotracción en una transacción de gran tamaño (ya que causa otros problemas de rendimiento en otras areas), comprobar si la base de datos se está ejecutando de manera optimizada, no sólo en el nivel del sistema sino también en el nivel de las tablas y las consultas, calcular con qué frecuencia se tienen que actualizar las estadísticas para obtener un rendimiento óptimo o reorganizar las tablas y los índices a intervalos de tiempo regulares.
+    	\item Checar por Bloqueos:\\
+    	El administrador debe analizar de dónde provienen dichos bloqueos, detecta puntos muertos o sino comprueba por qué el origen del bloqueo sigue bloqueando.
+    \end{itemize}
+    \textbf{Responsabilidades de un Diseñador de Base de Datos:}
+    \begin{itemize}
+    	\item Diseño de base de datos:\\
+    	El diseñador debe Garantizar que los datos persistentes se almacenan de forma coherente y eficaz ademas de definir el comportamiento que se debe implementar en la base de datos.
+    	\item Identificar ideas de prueba:\\
+    	El diseñador debe indentificar las ideas de prueba que se deben explorar para valorar la calidad aceptable de los elementos de prueba de destino como tambien identificar un número suficiente de ideas para validar de forma adecuada elementos de prueba de destino con motivadores de prueba.
+    	\item Implementar elementos de diseño:\\
+    	El diseñador debe producir una implementación para una parte del diseño (por ejemplo, una clase, una realización de guión de uso o una entidad de base de datos), o para solucionar uno o varios defectos.
+    	\item  Revisar el diseño:\\
+    	El diseñador debe verificar que el modelo de diseño cumple los requisitos del sistema y que es una buena base para su implementación, garantizar que el modelo de diseño es coherente con las directrices de diseño generales y que las directrices de diseño cumplen sus objetivos.
+
+
+    \end{itemize}
+
+    \item[d)] Investia  cuáles  serían  los distintos tipos de
      usuarios finales de una base de datos, indica las principales
      actividades que realizaría cada uno de ellos. \\\\
      \textbf{Usuarios Finales.} Acceden a la base de datos desde
@@ -122,9 +138,22 @@
        satisfacer requerimientos complejos.
        \item \textbf{Autónomos.} Mantienen sus propias bases de datos, utilizando paquetes de programas que facilitan su uso.
 
-     \end{itemize}}
-    \item[e)]{Explica las diferencias entre la independencia de datos física y lógica. ¿Cuál es más difícil de lograr y por qué?  }%Pregunta E.%
-    \item[f)]{}
+     \end{itemize}
+    \item[e)]{Explica las diferencias entre la independencia de datos física y
+                lógica. ¿Cuál es más difícil de lograr y por qué?\\
+        La indpenedencia de datos lógica se refiere al modelo del esquema bajo el
+        cual se van a organizar los datos en la base de datos. Por otro lado,
+        la independecia física es la manera en la que los datos en sí son almacenados
+        en el dispositivo de almacenamiento, ya sea un disco duro o similar.
+        La independencia de estos dos niveles se refiere a que al momento de
+        actualizar la información alterando un nivel, el otro no se vea afectado.\\
+        La independencia lógica es más difícil de lograr porque hay que modelar los
+        esquemas de tal manera que la información sea clara, concisa, entendible y no
+        redundante. También al modificar el esquema lógico hay que tomar en cuenta cómo
+        se van a obtener los datos que no se tenían antes de esta modificación.
+    }
+    \item[f)]{¿Qué es el diccionario de datos y por qué es importante para el SMBD?}\\
+    Un diccionario de datos es un conjunto de metadatos que contiene las características lógicas de los datos que se van a utilizar en el sistema que se programa, incluyendo nombre, descripción, alias, contenido y organización.Estos diccionarios se desarrollan durante el análisis de flujo de datos y ayuda a los analistas que participan en la determinación de los requerimientos del sistema, su contenido también se emplea durante el diseño del proyecto.Identifica los procesos donde se emplean los datos y los sitios donde se necesita el acceso inmediato a la información, se desarrolla durante el análisis de flujo de datos y auxilia a los analistas que participan en la determinación de los requerimientos del sistema, su contenido también se emplea durante el diseño.El objetivo de un diccionario de datos es dar precisión sobre los datos que se manejan en un sistema, evitando así malas interpretaciones o ambigüedades.
     \item[g)]{Indica las principales características de los modelos de
     datos más representativos. ¿Cuáles serían las diferencias
     entre los  modelos relacional, orientado a objetos,
@@ -139,8 +168,31 @@
     \textbf{Modelo Objeto-Relacional} Representa los datos como tablas,
     permite construir tipos de objetos complejos, capacidad para
     encapsular y asociar métodos a los objetos.}
-    \item[h)]{Elabora una línea de tiempo, en dónde indiques los principales hitos en el desarrollo de las BDs.}%Pregunta E.%
-    \item[i)]{}
+    \item[h)]{Elabora una línea de tiempo, en dónde indiques los principales hitos en el desarrollo de las BDs.}
+    \item[i)]{Indica las responsabilidades que tiene un Sistema Manejador de
+                Bases de Datos y para cada responsabilidad, explica los problemas
+                que surgirían si dicha responsabilidad no se cumpliera.\\
+        Responsabilidades:\\
+        \begin{enumerate}
+            \item{Interacción con el administrador de archivos}
+            \item{Cuidar de la integridad y seguridad de los datos}
+            \item{Respaldo y recuperación}
+            \item{Control de concurrencia}
+        \end{enumerate}
+        Sin poder interactuar con el sistema administrador de archivos es imposible
+        guardar y recuperar los datos.\\
+        En caso de que el SMBD no cuide de la integridad y seguridad de los datos
+        pueden surgir problemas del tipo que alguna persona no deseada pueda acceder
+        y mulipular los datos (seguridad) o de que los datos se hayan corrompido
+        (integridad).\\
+        Sin respaldo y recuperación surge el problema de que se puedan perder los
+        datos de manera permanente.
+        Finalmente, sin un control de concurrencia correcto, surge el problema de
+        que se intente acceder a la información desde diversos puntos ya sea para
+        leerla o modificarla pero con el problema de que ambas lecturas puedan
+        ser distintas.
+        \cite{RDBMS}
+    }
     \item[j)]{Supón  que  un banco pequeño desea  almacenar  su
     información  en una  base  de  datos  y  le gustaría comprar
     el SMBD que  tenga  la  menor  cantidad  de  características
@@ -172,13 +224,26 @@
 }
 \item[2)]{
 \begin{enumerate}
-    \item[a)]{}
-    \item[b)]{¿Qué son las bases de datos NoSQL? indica el modelo de datos utilizado y algunos proveedores. }%Pregunta E.%
+    \item[a)]{¿Qué es la Calidad de Datos y cómo se relaciona con las
+    bases de datos?\\
+    Es  el estado de completez, validez, consistencia y exactitud
+    que hace a los datos apropiados para su uso. También puede ser
+    definida como el grado en el que un conjunto de características
+    cumplen con los requerimientos necesarios.
+    Se relaciona con las bases de datos ya que una buena calidad de
+    datos es esencial en la resolución de entidades, ya que aumenta la
+    fiabilidad de las entidades resueltas y las relaciones
+    detectadas.Muchos problemas que se suelen presentar en una base
+    de datos se pueden solucionar con una buena calidad y manejo
+    de datos. Además esto reduce costos a la larga.
+}
+    \item[b)]{¿Qué son las bases de datos NoSQL? indica el modelo de datos utilizado y algunos proveedores. }\\
+    Son una amplia clase de sistemas de gestión de bases de datos que difieren del modelo clásico de SGBDR (Sistema de Gestión de Bases de Datos Relacionales) en aspectos importantes, siendo el más destacado que no usan SQL como lenguaje principal de consultas. Los datos almacenados no requieren estructuras fijas como tablas, normalmente no soportan operaciones JOIN, ni garantizan completamente ACID (atomicidad, consistencia, aislamiento y durabilidad)
     \item[c)]{}
 \end{enumerate}
 }
 \end{enumerate}
-\begin{thebibliography}{3}
+\begin{thebibliography}{20}
     \bibitem[DBA]{DBA}
         Wikipedia. (2019).\\
         Administrador de Banco de Dados.\\
@@ -189,5 +254,20 @@
         Database design.\\
         Visitado el 23 de agosto del 2019.\\
         \url{https://en.wikipedia.org/wiki/Database_design}
+    \bibitem[DI]{DI}
+        tutorialspoint. (2019).\\
+        DBMS - Data Independence.\\
+        Visitado el 23 de agosto del 2019.\\
+        \url{https://www.tutorialspoint.com/dbms/dbms_data_independence.htm#}
+    \bibitem[DI2]{DI2}
+        Wikipedia. (2019).\\
+        Data independence.\\
+        Visitado el 23 de agosto del 2019.\\
+        \url{https://en.wikipedia.org/wiki/Data_independence}
+    \bibitem[RDBMS]{RDBMS}
+        GTU MCA Course Site. (2019).\\
+        Responsibilities of Database Management System.\\
+        Visitado el 23 de agosto del 2019.\\
+        \url{https://sites.google.com/site/gtublog/sem2/2620003/responsibilitiesofdbms}
 \end{thebibliography}
 \end{document}
