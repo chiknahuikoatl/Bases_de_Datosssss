@@ -1,4 +1,6 @@
 \documentclass[a4paper, 12pt]{report}
+
+
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp}
@@ -33,15 +35,15 @@
     \vspace{1.25cm}
     {\Large\textsc Almeida Rodríguez Jerónimo\par}
     \vspace{.1cm}
-    {\large\texttt{jalrod@ciencias.unam.mx}\par}
+    {\large\texttt{418003815}\par}
     \vspace{0.25cm}
     {\Large\textsc Figueroa Sandoval Gerardo Emiliano\par}
     \vspace{.1cm}
-    {\large\texttt{efs\_070@ciencias.unam.mx}\par}
+    {\large\texttt{315241774}\par}
     \vspace{0.25cm}
     {\Large\textsc Ibarra Moreno Gisselle \par}
     \vspace{.1cm}
-    {\large\texttt{gisselleib@ciencias.unam.mx}\par}
+    {\large\texttt{315602193}\par}
     \vspace{1.5cm}
     \vfill
     \begin{figure}[hb!]
@@ -168,7 +170,15 @@
     \textbf{Modelo Objeto-Relacional} Representa los datos como tablas,
     permite construir tipos de objetos complejos, capacidad para
     encapsular y asociar métodos a los objetos.}
-    \item[h)]{Elabora una línea de tiempo, en dónde indiques los principales hitos en el desarrollo de las BDs.}
+    \item[h)]{Elabora una línea de tiempo, en dónde indiques los principales
+              hitos en el desarrollo de las BDs.\\
+        \begin{figure}[ht!]
+            \centering
+            \includegraphics[width=\textwidth]{Linea_de_tiempo_BD.jpg}
+            \caption{Línea de tiempo }
+        \end{figure}
+        Línea de tiempo basada en la información obtenida de: \cite{DBH}
+    }
     \item[i)]{Indica las responsabilidades que tiene un Sistema Manejador de
                 Bases de Datos y para cada responsabilidad, explica los problemas
                 que surgirían si dicha responsabilidad no se cumpliera.\\
@@ -239,7 +249,14 @@
 }
     \item[b)]{¿Qué son las bases de datos NoSQL? indica el modelo de datos utilizado y algunos proveedores. }\\
     Son una amplia clase de sistemas de gestión de bases de datos que difieren del modelo clásico de SGBDR (Sistema de Gestión de Bases de Datos Relacionales) en aspectos importantes, siendo el más destacado que no usan SQL como lenguaje principal de consultas. Los datos almacenados no requieren estructuras fijas como tablas, normalmente no soportan operaciones JOIN, ni garantizan completamente ACID (atomicidad, consistencia, aislamiento y durabilidad)
-    \item[c)]{}
+    \item[c)]{Un almacén de datos es cómo una base de datos superpoderosa. Su
+        propósito es almacenar grandes cantidades de datos, entre ellos de tipo
+        histórico, con el fin de hacer análisis sobre cantidades de información
+        grandes y distintas. La diferencia con una base de datos es que la base
+        de datos se enfoca en almacenar y recuperar información específica del
+        contexto en el que se desempeña. Por su parte, el almacén de datos almacena
+        información mucho más diversa y su uso es más amplio.\cite{DWvDB}
+    }
 \end{enumerate}
 }
 \end{enumerate}
@@ -269,5 +286,22 @@
         Responsibilities of Database Management System.\\
         Visitado el 23 de agosto del 2019.\\
         \url{https://sites.google.com/site/gtublog/sem2/2620003/responsibilitiesofdbms}
+    \bibitem[DW]{DW}
+        Wikipedia. (2019).\\
+        Data warehouse.\\
+        Visitado el 23 de agosto del 2019.\\
+        \url{https://en.wikipedia.org/wiki/Data_warehouse}
+    \bibitem[DWvDB]{DWvDB}
+        panoply. (2019).\\
+        The Difference Between a Data Warehouse and a Database.\\
+        Visitado el 23 de agosto del 2019.\\
+        \url{https://panoply.io/data-warehouse-guide/the-difference-between-a-database-and-a-data-warehouse/}
+
+    \bibitem[DBH]{DBH}
+        quickbase. (2019).\\
+        A Timeline of Database History.\\
+        Visitado el 23 de agosto del 2019.\\
+        \url{https://www.quickbase.com/articles/timeline-of-database-history}
+
 \end{thebibliography}
 \end{document}
