@@ -1,0 +1,87 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=4cm, right=4cm, top=4cm]{geometry}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{bussproofs}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+\pagestyle{fancy}
+\lhead{Almeida, Figueroa \& Ibarra}
+\chead{Tarea 2}
+\rhead{\today}
+
+\begin{document}
+\begin{titlepage}
+    \centering
+    {\scshape\Huge Universidad Nacional Autónoma de México \par}
+    \vspace{1.25cm}
+    {\scshape\huge Fundamentos de Bases de Datos\par}
+    \vspace{1.25cm}
+    {\huge\bfseries Tarea 2: Modelo Entidad-Relación\par}
+    \vspace{1.25cm}
+    {\Large\textsc Almeida Rodríguez Jerónimo\par}
+    \vspace{.1cm}
+    {\large\texttt{418003815}\par}
+    \vspace{0.25cm}
+    {\Large\textsc Figueroa Sandoval Gerardo Emiliano\par}
+    \vspace{.1cm}
+    {\large\texttt{315241774}\par}
+    \vspace{0.25cm}
+    {\Large\textsc Ibarra Moreno Gisselle \par}
+    \vspace{.1cm}
+    {\large\texttt{315602193}\par}
+    \vspace{1.5cm}
+    \vfill
+    \begin{figure}[hb!]
+        \includegraphics[width=.3\textwidth]
+            {../logos/escudo_f-ciencias.png}\hfill
+        \includegraphics[width=.3\textwidth]
+            {../logos/Escudo_UNAM.png}\hfill
+    \end{figure}
+\end{titlepage}
+\begin{enumerate}
+\item[1)]{
+\begin{enumerate}
+    \item[i)]{Un conjunto de entidades débiles siempre se puede convertir en un
+        conjunto de entidades fuertes añadiéndole a sus atributos la llave
+        primaria del conjunto de entidades fuertes a las que está asociado.
+        Describe qué tipo de redundancia resultaría si se realizara dicha
+        conversión.\\
+        La redundancia que resultaría sería que cualquier dato que se haya
+        tomado cómo llave primaria en la entidad principal estaría repetida
+        tantas veces cómo entidades débiles asociadas a dicha entidad.
+    }
+    \item[ii)]{}
+    \item[iii)]{}
+    \item[iv)]{}
+\end{enumerate}
+}
+\item[2)]{
+\begin{enumerate}
+    \item[a)]{}
+    \item[b)]{}
+    \item[c)]{}
+\end{enumerate}
+}
+\end{enumerate}
+
+
+\begin{thebibliography}{20}
+\end{thebibliography}
+
+
+\end{document}
