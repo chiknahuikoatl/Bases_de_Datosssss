@@ -90,7 +90,7 @@
  	 	\item No cualquiera puede manejarla, se necesita alguien
  	 	especializado.
  	 	\item Se requiere de capacitación para su manejo.
- 	 \end{itemize} }%Pregunta E.%
+ 	 \end{itemize} }
 
     \item[c)] Investiga cuáles serían las responsabilidades de un DBA y las de un diseñador de bases de datos.\\
     \textbf{Responsabilidades de un DBA:}
@@ -248,7 +248,17 @@
     de datos. Además esto reduce costos a la larga.
 }
     \item[b)]{¿Qué son las bases de datos NoSQL? indica el modelo de datos utilizado y algunos proveedores. }\\
-    Son una amplia clase de sistemas de gestión de bases de datos que difieren del modelo clásico de SGBDR (Sistema de Gestión de Bases de Datos Relacionales) en aspectos importantes, siendo el más destacado que no usan SQL como lenguaje principal de consultas. Los datos almacenados no requieren estructuras fijas como tablas, normalmente no soportan operaciones JOIN, ni garantizan completamente ACID (atomicidad, consistencia, aislamiento y durabilidad)
+
+    Son una amplia clase de sistemas de gestión de bases de datos que difieren del modelo clásico de SGBDR (Sistema de Gestión de Bases de Datos Relacionales) en aspectos importantes, siendo el más destacado que no usan SQL como lenguaje principal de consultas. Los datos almacenados no requieren estructuras fijas como tablas, normalmente no soportan operaciones JOIN, ni garantizan completamente ACID (atomicidad, consistencia, aislamiento y durabilidad). No tienen un modelo predeterminado como era el relacional en los SGBDR, sino se adapta segun la cantidad y tipo de datos que se vayan a utilizar para asi llegar a algo mucho mas optimizado , mientras mas aumente la estructura y más escalable se quiere hacer un proyecto, más cuesta conseguir que una base de datos relacional sea intuitiva, por no hablar de la dificultad para conservar su simplicidad.\\
+    Algunos proveeedores serian :
+    \begin{itemize}
+    	\item MongoDB
+    	\item Cassandra
+    	\item Amazon DynamoDB
+    	\item Oracle NoSQL
+    	\item Redis
+    	\item etc...
+    \end{itemize}
     \item[c)]{Un almacén de datos es cómo una base de datos superpoderosa. Su
         propósito es almacenar grandes cantidades de datos, entre ellos de tipo
         histórico, con el fin de hacer análisis sobre cantidades de información
@@ -257,6 +267,9 @@
         contexto en el que se desempeña. Por su parte, el almacén de datos almacena
         información mucho más diversa y su uso es más amplio.\cite{DWvDB}
     }
+
+
+
 \end{enumerate}
 }
 \end{enumerate}
