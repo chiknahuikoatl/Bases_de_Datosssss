@@ -65,7 +65,44 @@
         tomado cómo llave primaria en la entidad principal estaría repetida
         tantas veces cómo entidades débiles asociadas a dicha entidad.
     }
-    \item[ii)]{}
+    \item[ii)]{Responde a las siguientes cuestiones, deberás indicar si son
+                posibles o no, justificando tu respuesta. Cuando no sea posible
+                deberás indicar alguna recomendación al respecto:\\
+        \begin{itemize}
+        \item{\textbf{¿Un atributo compuesto puede ser llave?} Sí. Aunque no es
+            recomendable porque hay que tomar en cuenta todos los atributos que
+            se hayan decidido usar para formarla. Lo que resultaría sería una
+            llave compuesta.
+        }
+        \item{\textbf{¿Un atributo multivaluado puede ser llave?} No. El
+            problema de hacer esto es que no hay manera de determinar cual de
+            los atributos es el que se va a usar para identificar a la entidad.
+        }
+        \item{\textbf{¿Un atributo derivado puede ser llave?} No. Al ser un
+            atributo que para obtenerlo se requiere hacer un cálculo, es posible
+            que el resultado de hacer este cálculo no sea único. Además, al
+            implementar la BD los atributos derivados no tienen representación
+            física.
+        }
+        \item{\textbf{¿Un atributo multivaluado puede ser compuesto?} Sí. Por
+            ejemplo, un atributo multivaluado de correo que se divida en prefijo,
+            dominio y sufijo (*.com, etc.).
+        }
+        \item{\textbf{¿Un atributo multivaluado puede ser derivado?} Sí. No
+            tengo pruebas pero tampoco tengo dudas.\\
+            Esto es posible ya que lo único que nos pide un atributo multivaluado
+            es almacenar varios valores que son más fáciles de representar bajo
+            un nombre en común. Sus subatributos pueden ser calculados
+            directamente cómo cualquier otro atributo.
+        }
+        \item{\textbf{¿Qué implicaría la existencia de una entidad cuyos
+            atributos sean todos derivados?} Que al implementarla, esta entidad
+            en sí no existe más que en nombre. Habría que hacer un cálculo sobre
+            cada uno de los atributos. Sería más bien cómo un concepto, un
+            fantasma, existe pero no físicamente.
+        }
+        \end{itemize}
+    }
     \item[iii)]{Explica el concepto de agregación en el modelo E/R y
 		 proporciona un par de ejemplos.\\
 
