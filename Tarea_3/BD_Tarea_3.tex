@@ -72,7 +72,61 @@
     y el nombre de la columna.
 }
 \item[3.]{\textbf{Tratamiento Sistematico de los Valores 'NULL': }\\
-    
+    Los valores NULL son usados en SMBDR para representar informanción faltante
+    o desconocida de una manera sistemática, independientemente del tipo de dato.
+    Son distintos del caracter de cadena vacía, de caracteres blancos y de
+    cualquier número.
+}
+\item[4.]{\textbf{Catálogo Dinámico en Línea Basado en el Modelo Relacional:}\\
+    En el nivel lógico, la descripción de la base de datos está representada al
+    mismo nivel que los datos ordinarios. De esta manera, los usuarios autorizados
+    pueden usar el mismo lenguaje relacional que se usa para datos regulares.
+}
+\item[5.]{\textbf{Regla del Sublenguaje de Datos Comprensivos:}\\
+    Un sistema relacional puede soprtar varios lenguajes de programación y modos
+    de uso terminal, pero al menos uno de ellos debe tener expresiones que sean
+    expresables por medio de una sitáxis bien definida y puede soportar lo
+    siguiente:
+    \begin{itemize}
+        \item{Definición de datos.}
+        \item{Visibilización de la definición.}
+        \item{Manipulación de datos}
+        \item{Restricciones de integridad.}
+        \item{Autorizaciones.}
+        \item{Bordes de transacciones (inicio, commit, etc.).}
+    \end{itemize}
+}
+\item[6.]{\textbf{Regla de la vista actualizada:}\\
+    Todas las vistas que se pueden actualizar las puede actualizar el sistema.
+}
+\item[7.]{\textbf{Insert, Delete y Actualizar a Alto Nivel:}\\
+    La abilidad de manejar una relación base o derivada cómo un único operando
+    no solo al recuperar la información sino también para insertar, borrar y
+    actualizar información.
+}
+\item[8.]{\textbf{Independencia Física de Datos:}\\
+    Los programas de aplicación y actividades terminales se mantienen funcinando
+    cuándo hay cambios en la representación de almacenamiento o métodos de acceso.
+}
+\item[9.]{\textbf{Independencia Lógica de Datos:}\\
+    Los programas de aplicación y actividades terminales se mantienen lógicamente
+    funcionales cambios que preserven la información se haga en alguna tabla.
+}
+\item[10.]{\textbf{Independencia de Integridad:}\\
+    Las restricciones de integridad específicas de de una base relacional deben
+    poder ser definidas en el lenguaje de el lenguaje relacional y deben poder
+    ser almacenadas en el catálogo, no en los programas de aplicación. Protege la
+    información de datos inválidos.
+}
+\item[11.]{\textbf{Independencia de Distribución:}\\
+    El lenguaje del SMBD debe permitir que los programas de aplicación y actividades
+    terminales permanezcan lógicamente funcionales y accesibles ya sea que los datos
+    estén físicamente cnetralizados o distribuidos.
+}
+\item[12.]{\textbf{Regla de No-Subversión:}\\
+    Si u sistema relacional permite el uso de slgún lengiaje de programación de
+    un nivel más bajo, este lenguaje no puede ser usado para traspasar las reglas
+    de integridad y restricciones establecidas por el lenguaje relacional.
 }
 \end{enumerate}
 }
