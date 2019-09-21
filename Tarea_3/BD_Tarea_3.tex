@@ -1,0 +1,137 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=4cm, right=4cm, top=4cm]{geometry}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{bussproofs}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+\pagestyle{fancy}
+\lhead{Almeida, Figueroa \& Ibarra}
+\chead{Tarea 3}
+\rhead{\today}
+
+\begin{document}
+\begin{titlepage}
+    \centering
+    {\scshape\Huge Universidad Nacional Autónoma de México \par}
+    \vspace{1.25cm}
+    {\scshape\huge Fundamentos de Bases de Datos\par}
+    \vspace{1.25cm}
+    {\huge\bfseries Tarea 3: Modelo Relacional\par}
+    \vspace{1.25cm}
+    {\Large\textsc Almeida Rodríguez Jerónimo\par}
+    \vspace{.1cm}
+    {\large\texttt{418003815}\par}
+    \vspace{0.25cm}
+    {\Large\textsc Figueroa Sandoval Gerardo Emiliano\par}
+    \vspace{.1cm}
+    {\large\texttt{315241774}\par}
+    \vspace{0.25cm}
+    {\Large\textsc Ibarra Moreno Gisselle \par}
+    \vspace{.1cm}
+    {\large\texttt{315602193}\par}
+    \vspace{1.5cm}
+    \vfill
+    \begin{figure}[hb!]
+        \includegraphics[width=.3\textwidth]
+            {../logos/escudo_f-ciencias.png}\hfill
+        \includegraphics[width=.3\textwidth]
+            {../logos/Escudo_UNAM.png}\hfill
+    \end{figure}
+\end{titlepage}
+
+\section*{1. Preguntas de Repaso.}{
+}
+
+\section*{2. Modelo Relacional.}{
+}
+
+\section*{3. Lectura.}{
+\begin{enumerate}
+\item[1.]{\textbf{Regla de Información: } \\
+    Toda la Información en la base de datos está representada de una manera única,
+    cómo valores en tablas.
+}
+\item[2.]{\textbf{Regla del Acceso Garantizado: }\\
+    Está garantizado que cada dato (valor atómico) pueda ser accedido lógicamente
+    por medio de una combinación de nombre de tabla, valor de la llave primaria
+    y el nombre de la columna.
+}
+\item[3.]{\textbf{Tratamiento Sistematico de los Valores 'NULL': }\\
+    Los valores NULL son usados en SMBDR para representar informanción faltante
+    o desconocida de una manera sistemática, independientemente del tipo de dato.
+    Son distintos del caracter de cadena vacía, de caracteres blancos y de
+    cualquier número.
+}
+\item[4.]{\textbf{Catálogo Dinámico en Línea Basado en el Modelo Relacional:}\\
+    En el nivel lógico, la descripción de la base de datos está representada al
+    mismo nivel que los datos ordinarios. De esta manera, los usuarios autorizados
+    pueden usar el mismo lenguaje relacional que se usa para datos regulares.
+}
+\item[5.]{\textbf{Regla del Sublenguaje de Datos Comprensivos:}\\
+    Un sistema relacional puede soprtar varios lenguajes de programación y modos
+    de uso terminal, pero al menos uno de ellos debe tener expresiones que sean
+    expresables por medio de una sitáxis bien definida y puede soportar lo
+    siguiente:
+    \begin{itemize}
+        \item{Definición de datos.}
+        \item{Visibilización de la definición.}
+        \item{Manipulación de datos}
+        \item{Restricciones de integridad.}
+        \item{Autorizaciones.}
+        \item{Bordes de transacciones (inicio, commit, etc.).}
+    \end{itemize}
+}
+\item[6.]{\textbf{Regla de la vista actualizada:}\\
+    Todas las vistas que se pueden actualizar las puede actualizar el sistema.
+}
+\item[7.]{\textbf{Insert, Delete y Actualizar a Alto Nivel:}\\
+    La abilidad de manejar una relación base o derivada cómo un único operando
+    no solo al recuperar la información sino también para insertar, borrar y
+    actualizar información.
+}
+\item[8.]{\textbf{Independencia Física de Datos:}\\
+    Los programas de aplicación y actividades terminales se mantienen funcinando
+    cuándo hay cambios en la representación de almacenamiento o métodos de acceso.
+}
+\item[9.]{\textbf{Independencia Lógica de Datos:}\\
+    Los programas de aplicación y actividades terminales se mantienen lógicamente
+    funcionales cambios que preserven la información se haga en alguna tabla.
+}
+\item[10.]{\textbf{Independencia de Integridad:}\\
+    Las restricciones de integridad específicas de de una base relacional deben
+    poder ser definidas en el lenguaje de el lenguaje relacional y deben poder
+    ser almacenadas en el catálogo, no en los programas de aplicación. Protege la
+    información de datos inválidos.
+}
+\item[11.]{\textbf{Independencia de Distribución:}\\
+    El lenguaje del SMBD debe permitir que los programas de aplicación y actividades
+    terminales permanezcan lógicamente funcionales y accesibles ya sea que los datos
+    estén físicamente cnetralizados o distribuidos.
+}
+\item[12.]{\textbf{Regla de No-Subversión:}\\
+    Si u sistema relacional permite el uso de slgún lengiaje de programación de
+    un nivel más bajo, este lenguaje no puede ser usado para traspasar las reglas
+    de integridad y restricciones establecidas por el lenguaje relacional.
+}
+\end{enumerate}
+}
+
+
+
+
+\end{document}
