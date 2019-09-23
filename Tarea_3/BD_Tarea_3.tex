@@ -63,71 +63,116 @@
 \section*{3. Lectura.}{
 \begin{enumerate}
 \item[1.]{\textbf{Regla de Información: } \\
-    Toda la Información en la base de datos está representada de una manera única,
-    cómo valores en tablas.
+    \textit{Toda la Información en la base de datos está representada de una
+    manera única, cómo valores en tablas.}\\
+    En general, toda la información se guarda en tablas.
 }
 \item[2.]{\textbf{Regla del Acceso Garantizado: }\\
-    Está garantizado que cada dato (valor atómico) pueda ser accedido lógicamente
-    por medio de una combinación de nombre de tabla, valor de la llave primaria
-    y el nombre de la columna.
+    \textit{Está garantizado que cada dato (valor atómico) pueda ser accedido
+    lógicamente por medio de una combinación de nombre de tabla, valor de la
+    llave primaria y el nombre de la columna.}\\
+    Esta regla lo que busca es garantizar el acceso a la información de manera
+    única por medio de un conjunto de ``coordenadas'' que, basadas en el nombre
+    de la tabla, la llave primaria y el nombre de la columna, permite que cada
+    dato pueda recuperarse de manera única.
 }
-\item[3.]{\textbf{Tratamiento Sistematico de los Valores 'NULL': }\\
+\item[3.]{\textbf{Tratamiento Sistematico de los Valores 'NULL': }\\\textit{
     Los valores NULL son usados en SMBDR para representar informanción faltante
     o desconocida de una manera sistemática, independientemente del tipo de dato.
     Son distintos del caracter de cadena vacía, de caracteres blancos y de
-    cualquier número.
+    cualquier número.}\\
+    Implementa el uso de valores NULL, que en general significan que el valor
+    es desconocido. Usualmente se trata cómo operar el vacío ($\O$) en teoría de
+    conjuntos: cualquier cosa operada con NULL devuelve NULL; aunque en algunos
+    casos, si se intenta concatenar con una cadena, devuelve la nueva cadena.
 }
 \item[4.]{\textbf{Catálogo Dinámico en Línea Basado en el Modelo Relacional:}\\
-    En el nivel lógico, la descripción de la base de datos está representada al
-    mismo nivel que los datos ordinarios. De esta manera, los usuarios autorizados
-    pueden usar el mismo lenguaje relacional que se usa para datos regulares.
+    \textit{En el nivel lógico, la descripción de la base de datos está
+    representada al mismo nivel que los datos ordinarios. De esta manera, los
+    usuarios autorizados pueden usar el mismo lenguaje relacional que se usa
+    para datos regulares.}\\
+    En general requiere que el sistema sea autodescriptivo.
 }
 \item[5.]{\textbf{Regla del Sublenguaje de Datos Comprensivos:}\\
+    \textit{
     Un sistema relacional puede soprtar varios lenguajes de programación y modos
     de uso terminal, pero al menos uno de ellos debe tener expresiones que sean
     expresables por medio de una sitáxis bien definida y puede soportar lo
-    siguiente:
+    siguiente:}
     \begin{itemize}
-        \item{Definición de datos.}
-        \item{Visibilización de la definición.}
-        \item{Manipulación de datos}
-        \item{Restricciones de integridad.}
-        \item{Autorizaciones.}
-        \item{Bordes de transacciones (inicio, commit, etc.).}
+        \item\textit{{Definición de datos.}}
+        \item\textit{{Visibilización de la definición.}}
+        \item\textit{{Manipulación de datos}}
+        \item\textit{{Restricciones de integridad.}}
+        \item\textit{{Autorizaciones.}}
+        \item\textit{{Bordes de transacciones (inicio, commit, etc.).}}
     \end{itemize}
+    Esta restricción requiere que el sistema tenga un lenguaje que pueda manipular
+    (recuperar, insertar, borrar, etc.) la información dentro de la base de datos.
 }
 \item[6.]{\textbf{Regla de la vista actualizada:}\\
-    Todas las vistas que se pueden actualizar las puede actualizar el sistema.
+    \textit{Todas las vistas que se pueden actualizar las puede actualizar el
+    sistema.}\\
+    Esta regla requiere que los distintos usuarios puedan ver la estructura de
+    las bases de datos.\\
+    Es una de las reglas más difíciles de implementar, de tal manera que ningún
+    SMBD la satisface completamente. En SQL Server, las vistas se actualizan
+    solamente si no se actualiza más de una tabla en un momento dado.
 }
 \item[7.]{\textbf{Insert, Delete y Actualizar a Alto Nivel:}\\
-    La abilidad de manejar una relación base o derivada cómo un único operando
-    no solo al recuperar la información sino también para insertar, borrar y
-    actualizar información.
+    \textit{La abilidad de manejar una relación base o derivada cómo un único
+    operando no solo al recuperar la información sino también para insertar,
+    borrar y actualizar información.}\\
+    Esta regla establece que la información debe ser manipulada cómo conjuntos,
+    lo que ayuda a garantizar la consistencia de la base de datos.
 }
-\item[8.]{\textbf{Independencia Física de Datos:}\\
+\item[8.]{\textbf{Independencia Física de Datos:}\\\textit{
     Los programas de aplicación y actividades terminales se mantienen funcinando
-    cuándo hay cambios en la representación de almacenamiento o métodos de acceso.
+    cuándo hay cambios en la representación de almacenamiento o métodos de
+    acceso.}\\
+    El objetivo es que el almacenamiento de los datos sea independiente del
+    programa que los requiere pero asegurando que pueden ser accedidos de la
+    misma manera.
 }
-\item[9.]{\textbf{Independencia Lógica de Datos:}\\
+\item[9.]{\textbf{Independencia Lógica de Datos:}\\\textit{
     Los programas de aplicación y actividades terminales se mantienen lógicamente
-    funcionales cambios que preserven la información se haga en alguna tabla.
+    funcionales cambios que preserven la información se haga en alguna tabla.}\\
+    Establece que la manera específica de acceder a la base de datos no debe afectar
+    la abilidad del usuario de manipular los datos.
 }
-\item[10.]{\textbf{Independencia de Integridad:}\\
+\item[10.]{\textbf{Independencia de Integridad:}\\\textit{
     Las restricciones de integridad específicas de de una base relacional deben
     poder ser definidas en el lenguaje de el lenguaje relacional y deben poder
     ser almacenadas en el catálogo, no en los programas de aplicación. Protege la
-    información de datos inválidos.
+    información de datos inválidos.}\\
+    Este regla intenta mantener la integridad de la base de datos, particularmente
+    en lo relacionado a todo aquello que se puede acceder por medio de una llave
+    primaria o foranea.
 }
-\item[11.]{\textbf{Independencia de Distribución:}\\
+\item[11.]{\textbf{Independencia de Distribución:}\\\textit{
     El lenguaje del SMBD debe permitir que los programas de aplicación y actividades
     terminales permanezcan lógicamente funcionales y accesibles ya sea que los datos
-    estén físicamente cnetralizados o distribuidos.
+    estén físicamente cnetralizados o distribuidos.}\\
+    El objetivo de esta regla es mantener una base de datos ``unificada'' aunque
+    la información se encuentre físicamente repartida en dispositivos diferentes.
+    Esto significa que a pesar de estar separada cumple (idealmente) con las
+    propiedades que una base de dato debe cumplir.
 }
-\item[12.]{\textbf{Regla de No-Subversión:}\\
-    Si u sistema relacional permite el uso de slgún lengiaje de programación de
+\item[12.]{\textbf{Regla de No-Subversión:}\\\textit{
+    Si un sistema relacional permite el uso de slgún lengiaje de programación de
     un nivel más bajo, este lenguaje no puede ser usado para traspasar las reglas
-    de integridad y restricciones establecidas por el lenguaje relacional.
+    de integridad y restricciones establecidas por el lenguaje relacional.}\\
+    El objetivo es que no haya manera de acceder a la información fuera de la
+    establecida por el SMBDR. Esto con el objetivo de mantener la integridad
+    del sistema.\\\\
 }
+La importancia de estas reglas radica en mantener un sistema que a lo largo de su
+ejecución sea capaz de mantener consistencia en la información que almacena además
+de de establecer una manera de manipular y acceder a la información de manera
+consistente y confiable.\\
+Cómo establece el artículo, tanto la regla 6 cómo la 12 no se pueden cumplir
+enteramente por los SMDBR actuales.
+
 \end{enumerate}
 }
 
