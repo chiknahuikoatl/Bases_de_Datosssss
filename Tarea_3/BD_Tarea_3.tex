@@ -10,6 +10,8 @@
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{enumitem}
+
 
 \usepackage{hyperref}
 \hypersetup{
@@ -55,6 +57,155 @@
 \end{titlepage}
 
 \section*{1. Preguntas de Repaso.}{
+	\begin{enumerate}[label=(\alph*)]
+		\item  ¿Qué es una \textbf{relación} y qué características 	
+		tiene?\\
+		Es un modelo de organización y gestión de bases de datos 				consistente en el almacenamiento de datos en tablas compuestas 		por filas, o tuplas, y columnas o campos.Surge como solucio´n a 		la creciente variedad de los datos que integran las data 				warehouses y podemos resumir el concepto como una colecci´on 	
+		de tablas (relaciones). Estas tablas, pueden ser constru´ıdas 	
+		de diversas maneras:
+		\begin{itemize}
+			\item Creando un conjunto de tablas iniciales y aplicar 				operaciones de normalización hasta conseguir el esquema 				más óptimo.
+			\item Convertir el diagrama e-r a tablas y posteriormente 	
+			aplicar también operaciones de normalizacio´n hasta 	
+			conseguir el esquema óptimo.
+		\end{itemize}		 
+		\item  ¿Qué es un \textbf{esquema de relación}?\\
+		Es el que contiene la definición de una estructura 	
+		(generalmente relaciones o tablas de una base de datos), es 	
+		decir, determina la identidad de la relación y qué tipo de 	
+		información podrá ser almacenada dentro de ella; en otras 	
+		palabras, el esquema contiene los metadatos de la relación. 	
+		Todo esquema constará de:
+		\begin{itemize}
+			\item Nombre de la relación (su identificador).
+			\item Nombre de los atributos (o campos) de la relación y 				sus dominios; el dominio de un atributo o campo define los 	
+			valores permitidos para el mismo, equivalente al tipo de 	
+			dato por ejemplo character, integer, date, string..
+		\end{itemize}
+		\item  ¿Qué es una \textbf{llave primaria}?, ¿qué es una 		
+		\textbf{llave candidata}?, ¿qué es una \textbf{llave mínima}?, 		¿qué es una \textbf{super llave}?
+		\begin{itemize}
+			\item \textbf{Llave primaria}: Una llave primaria es un 	
+			conjunto de uno o más atributos de una tabla, que tomados 	
+			colectivamente nos permiten identificar un registro como 				único, es decir, en una tabla podemos saber cual es un 	
+			registro en específico sólo con conocer la llave 	
+			primaria.
+			\item \textbf{Llave candidata}:  Una llave candidata es					el atributo o conjunto de atributos que 	
+			tienen la propiedad de identificar unívocamente a una 	
+			tupla dentro de la relación. Las llaves constituyen el 	
+			mecanismo de direccionamiento a nivel de tuplas básico en 				un sistema relacional, es decir, es el único modo, 						garantizado por el sistema, de localizar alguna tupla 					específica.
+			\item\textbf{Super llave}: Una super llave es un conjunto 				de uno o más atributos que tomados colectivamente,permiten 			identificar de forma única una entidad en el conjunto de 
+			entidades.
+			\item \textbf{Llave mínima}: Es equivalente a la llave 		
+			candidata.
+		\end{itemize}
+		\item ¿Qué restricciones impone una \textbf{llave primaria} y 			una \textbf{llave foránea} al modelo de datos relacional?
+		\begin{itemize}
+			\item \textbf{Llave primaria}: Una tabla suele tener una 	
+			columna o una combinación de columnas cuyos valores 	
+			identifican de forma única cada fila de la tabla. Estas 	
+			columnas se denominan claves principales de la tabla y 	
+			exigen la integridad de entidad de la tabla. Debido a que 	
+			las restricciones de clave principal garantizan datos 	
+			únicos, con frecuencia se definen en una columna de 	
+			identidad.\\
+			Cuando especifica una restricción de clave principal en 	
+			una tabla, Motor de base de datos exige la unicidad de los 			datos mediante la creación automática de un índice único 	
+			para las columnas de clave principal. Este índice también 	
+			permite un acceso rápido a los datos cuando se usa la 	
+			clave principal en las consultas. Si se define una 	
+			restricción de clave principal para más de una columna, 	
+			puede haber valores duplicados dentro de la misma columna, 			pero cada combinación de valores de todas las columnas de 	
+			la definición de la restricción de clave principal debe 	
+			ser única.
+			\item \textbf{Llave foránea}: Una clave externa (FK) es 	
+			una columna o combinación de columnas que se usa para 	
+			establecer y aplicar un vínculo entre los datos de dos 	
+			tablas a fin de controlar los datos que se pueden 	
+			almacenar una tabla de clave externa. En una referencia de 			clave externa, se crea un vínculo entre dos tablas cuando 	
+			las columnas de una de ellas hacen referencia a las 	
+			columnas de la otra que contienen el valor de clave 	
+			principal. Esta columna se convierte en una clave externa 	
+			para la segunda tabla.\\
+			A diferencia de las restricciones de clave principal, la 	
+			creación una restricción de clave externa no crea 	
+			automáticamente el índice correspondiente. No obstante, la 			creación manual de un índice en una clave externa suele 				ser útil por los siguientes motivos:
+			\begin{itemize}
+				\item Las columnas de clave externa suelen usarse en 	
+				los criterios de combinación cuando los datos de las 	
+				tablas relacionadas se combinan en consultas mediante 	
+				la correspondencia de la columna o columnas de la 	
+				restricción de clave externa de una tabla y la columna 				o columnas de la clave única o principal de la otra. 	
+				Un índice permite al Motor de base de datos buscar con 				rapidez datos relacionados en la tabla de clave 	
+				externa. No obstante, no es necesario crear este 	
+				índice.
+				\item Los cambios en las restricciones de clave 	
+				principal se comprueban con restricciones de clave 	
+				externa en las tablas relacionadas.
+			\end{itemize}
+		\end{itemize}
+		 \item Investiga cómo se traducen las \textbf{categorías} 	
+		 (presentes en el \textbf{modelo E/R}) al \textbf{modelo 	
+		 relacional}. Proporciona un ejemplo.
+		 \begin{itemize}
+		 	\item \textbf{Entidad a Tabla}:Los identificadores 	
+		 	conforman la clave primaria, los atributos requeridos las 	
+		 	definiciones de valor no nulo (columnas que no admiten 	
+		 	nulos), en general cada atributo será una columna de esa
+		 	tabla.
+		 	\begin{itemize}
+		 		\item \textbf{Identificador compuesto}: Todo aquello 	
+		 		que aparezca subrayado entrará a formar parte de la 	
+		 		clave primaria, es el identificador, compuesto o no, 	
+		 		de la entidad. Dicho de otra forma, NO terminan siendo 				dos claves candidatas distintas.
+		 		\item \textbf{PERDIDAS}: Los atributos compuestos es 	
+		 		una de esas pérdidas semánticas, aunque poco 	
+		 		importante. Al final, simplemente tendremos una 	
+		 		columna por cada atributo simple.\\
+		 		Los atributos multivaluados no tienen una traducción 	
+		 		directa, hay que tomar alguna decisión de diseño y 	
+		 		generar alguna tabla adicional. 
+			\end{itemize}
+			\item \textbf{Relaciones 1:N a Tabla}: En cuanto a las 	
+			correspondencias entre clases, las relaciones entre 	
+			entidades, todo está muy ligado a lo que se está viendo 	
+			relativo al modelo relacional. Evidentemente, si el E-R 	
+			muestra una relación 1:N su traducción a tablas será una 	
+			relación 1:N... en tablas.\\
+			En cualquier caso, las relaciones en E-R, las 	
+			cardinalidades y los triángulos, se traducen a una clave 	
+			ajena, es decir, una (o varias, depende de la clave 	
+			primaria a la que apunte) columnas adicional  que es clave 			ajena. Siempre se trata de columnas que hay que añadir a 	
+			la tabla resultado.\\
+ 			Por eso no hace falta especificarlas en E-R, lo importante 			es el hecho que representa, que hay una relación entre el 				concepto A y el B. En E-R se hace dibujando los símbolos 				correspondientes; en MR añadiendo claves ajenas. 
+ 			\begin{itemize}
+ 				\item \textbf{Restricción de existencia }: En el caso 	
+ 				de las relaciones uno a muchos (1:N) se trata de 	
+ 				colocar una clave ajena en la tabla que sufre las 	
+ 				restricciones.
+ 				\item \textbf{Doble restricción de existencia}:Termina 				casi siempre cambiando las pautas de diseño para 		
+ 				transformarla, ya, en una única entidad). No obstante, 				teniendo cierto sentido representarla así en E-R, hay 	
+ 				que tener claro que su traducción, la verdaderamente 	
+ 				eficiente desde un punto de vista estructural, es una 	
+ 				única tabla sin claves ajenas pero con una clave 	
+ 				primaria y otra alternativa. 
+ 			\end{itemize}
+ 			\item \textbf{Relaciones N:M a Tabla}: Lo mejor es una 	
+ 			tercera tabla con 2 claves ajenas, pero ahora la clave 	
+ 			primaria se compone con esas dos claves ajenas.\\
+			Debe hacerse notar que, mientras en E-R es posible definir 			restricciones de existencia sobre esta relación, en MR 	
+			necesariamente ha de considerarse una pérdida semántica si 			queremos que nuestra representación, este conjunto de 	
+			tablas, se comporte realmente como una N:M. 
+			\item \textbf{Relaciones a Tabla Generalizaciones}: En el 	
+			caso de las generalizaciones, aparte de la tabla con los 	
+			datos comunes a todas las subclases, necesitamos una tabla 			por cada categoría que nos encontremos en el E-R. Esas 	
+			tablas comparten el hecho de que definen una clave ajena 	
+			que es exactamente la clave primaria. Aparte, se definirán 			tantas columnas como atributos propios tenga la entidad.  
+		 \end{itemize}
+		 \begin{center}
+		 \includegraphics[scale= 0.7]{img/Ejemplo.jpg}
+		 \end{center}	 
+	\end{enumerate}
 }
 
 \section*{2. Modelo Relacional.}{
