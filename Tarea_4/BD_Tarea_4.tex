@@ -67,11 +67,17 @@
     $b = $ user $\gamma$ count(titulo\_blog) $\rightarrow$ num\_b (r)\\
     $Q = p \Join b$\\
     $t =pi$ user ($\sigma$ num\_b $= 0 \wedge$ num\_p$ > 0$ ($Q$))\\
-    $pi *$ (User $\Join$ t)
+    $pi\ *$ (User $\Join$ t)
     }
 \item{}
 \item{}
-\item{}
+\item{Un reporte que muestre por usuario y por álbum (galería) el total de fotos
+        que haya subido al sitio.\\
+    $r = \pi_{\text{user, título\_galería, id\_fotografía}}$ (Usuario $\Join$ Galería
+        $\Join$ Fotografía)\\
+    $s =$usuario,  $\gamma$(count(id\_fotografía)$\rightarrow$ num\_fotos) (Fotografía)\\
+    $\pi $ user, título\_galería, s (Usuario$\Join$ Galería)
+}
 \item{}
 \end{enumerate}
 }
