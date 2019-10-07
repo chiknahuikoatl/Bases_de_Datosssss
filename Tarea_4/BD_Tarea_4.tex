@@ -59,15 +59,18 @@
 
 \section*{Ejercicio 1}{
 \begin{enumerate}[label=\alph*)]
-\item{Jero}
-\item{ Y user; count(id\_fotografía) $\rightarrow$ total\_fotos (Subir)\\
-}
+\item{Toda la información de los usuarios que tienen una página, pero no
+        incluyen blog.\\
+    $r = \pi$ user,  pagina, titulo\_blog (Usuario $\Join$ Página $\Join$ Blog)\\
+    $p = $ user $\gamma$ count(pagina) $\rightarrow$ num\_p (r)\\
+    $b = $ user $\gamma$ count(titulo\_blog) $\rightarrow$ num\_b (r)\\
+    $Q = p \Join b$\\
+    $\pi$ * ($\sigma$ num\_b $= 0 \wedge$ num\_p$ > 0$ ($Q$))
+    }
+\item{}
 \item{}
 \item{Jero}
-\item{r = Y id\_fotografía; count(user) $\rightarrow$ megustas (calificar)\\
-s = $\pi$ user, id\_fotografía, megustas (Subir $\Join$ r )\\
-t = Y user; max(megustas) $\rightarrow$ max\_megustas (s)\\
-$\pi$ user, id\_fotografía (s $\Join$ t )}
+\item{}
 \end{enumerate}
 }
 
@@ -75,66 +78,63 @@ $\pi$ user, id\_fotografía (s $\Join$ t )}
 \begin{enumerate}[label=\alph*)]
 \item{}
 \item{¿Qué fabricantes producen computadoras portátiles con un disco duro de
-    menos 100 GB?}
+    menos 100 GB?\\
+    \begin{figure}[hb!]
+        \includegraphics[width=\textwidth]
+            {img/b.png}\hfill
+    \end{figure}
+}
 \item{r = $\sigma$ fabricante = 'B' (Producto)\\
 	s = $\pi$ modelo, precio (Laptop) $\cup$ $\pi$ modelo, precio (PC)
 	$\cup$ $\pi$ modelo, precio (Impresora) \\
 	$\pi$ modelo, precio (s $\Join$ r)}
 \item{}
-\item{Encontrar los números de modelo de todas las impresoras láser a color.}
+\item{Encontrar los números de modelo de todas las impresoras láser a color.\\
+    \begin{figure}[hb!]
+        \includegraphics[width=\textwidth]
+            {img/e.png}\hfill
+    \end{figure}
+}
 \item{r = $\pi$ modelo, fabricante (Producto)\\
 	s = $\pi$ fabricante ($\pi$ modelo (Laptop) $\Join$ r)\\
 	t = $\pi$ fabricante ($\pi$ modelo (PC) $\Join$ r)\\
 	s - t\\}
 \item{}
 \item{Encontrar toda la información de las PCs que tienen la misma velocidad y
-    RAM.}
+    RAM.\\
+    \begin{figure}[hb!]
+        \includegraphics[width=\textwidth]
+            {img/h.png}\hfill
+    \end{figure}
+}
 \item{r = $\pi$ modelo ($\sigma$ velocidad $\geq$ 2.8 (PC))\\
 s = $\pi$ modelo($\sigma$ velocidad $\geq$ 2.8 (Laptop))\\
 $\pi$ fabricante ((r $\cup$ s) $\Join$ Producto)\\
 }
 \item{}
-\item{Jero}
+\item{Encontrar los fabricantes de PC con al menos tres velocidades diferentes.\\
+    \begin{figure}[hb!]
+        \includegraphics[width=\textwidth]
+            {img/k.png}\hfill
+    \end{figure}
+}
 \item{r = $\pi$ modelo, fabricante (Producto $\Join$ PC)\\
 s = Y fabricante; count(modelo) $\rightarrow$ numproductos (r)\\
 $\pi$ fabricante ($\sigma$ numproductos = 3 (s))}
 \item{}
-\item{Jero}
+\item{Crear un reporte que muestre por fabricante, el número de productos que tiene de cada tipo.\\
+    \begin{figure}[hb!]
+        \includegraphics[width=\textwidth]
+            {img/n.png}\hfill
+    \end{figure}
+}
 \item{r = $\pi$ modelo ($\sigma$ fabricante = 'E' (Producto)) $\Join$ Laptop\\
 s = $\sigma$ hd $<$ 200 (r)\\
-$\pi$ modelo, velocidad, ram, hd\_nuevo $\leftarrow$ hd * 1.15, pantalla, precio (s)\\
-}
+t = $\pi$ modelo, velocidad, ram, hd\_nuevo $\leftarrow$ hd * 1.15, pantalla, precio (s)\\
+t}
 \item{}
 \item{Jero}
 \item{}
-\item{$f(x)=xe^{-2x}\sin(x)$\\
-           Proponemos la siguiente solución:\\
-           \begin{align*}
-               y_p&=(Ax+B)e^{-2x}\sin(x)+(Cx+D)e^{-2x}\cos(x)\\
-               y_p'&=xe^{-2x}\sin(x)-2(Ax+B)e^{-2x}\sin(x)+(Ax+B)e^{-2x}\cos(x)\\
-                   &+xe^{-2x}\cos(x)-2(Cx+D)e^{-2x}\cos(x)-(Cx+D)e^{-2x}\sin(x)\\
-                   &=xe^{-2x}\big[\sin(x)+\cos(x)\big]
-                        +(Ax+B)e^{-2x}\big[-2\sin(x)+\cos(x)\big]\\
-                   &-(Cx+D)e^{-2x}\big[2\cos(x)+\sin(x)\big]\\
-               y_p''&=-2e^{-2x}\Big[(-2Ax+A-2B)[C\sin(x)+D\cos(x)]+(Ax+B)[C\cos(x)-D\sin(x)]\Big]\\
-                   &+e^{-2x}\Big[-2Ax[C\sin(x)+D\cos(x)]+(-2Ax+A-2B)[C\cos(x)-D\sin(x)]\\
-                   &+Ax[C\cos(x)-D\sin(x)]+(Ax+B)[-C\sin(x)-D\cos(x)]\Big]\\
-                   &=e^{-2x}\Big[(Ax-2A+3B)[C\sin(x)+D\cos(x)]+(A-B)[C\cos(x)-D\sin(x)]\Big]
-           \end{align*}
-           Entonces,
-               Entonces,
-       \begin{align*}
-           xe^{-2x}\sin(x)&=e^{-2x}\big[(Ax-2A+3B)[C\sin(x)+D\cos(x)]+(A-B)[C\cos(x)-D\sin(x)]\big]\\
-           &+2e^{-2x}\big[(-2Ax+A-2B)[C\sin(x)+D\cos(x)]+(Ax+B)[C\cos(x)-D\sin(x)]\big]\\
-           &-3(Ax+B)e^{-2x}[C\sin(x)+D\cos(x)]\\
-           x\sin(x)&=\big[(Ax-2A+3B)[C\sin(x)+D\cos(x)]+(A-B)[C\cos(x)-D\sin(x)]\big]\\
-           &+\big[(-4Ax+2A-4B)[C\sin(x)+D\cos(x)]+(2Ax+2B)[C\cos(x)-D\sin(x)]\big]\\
-           &-(3Ax+3B)[C\sin(x)+D\cos(x)]\\
-           x\sin(x)&=\big[(-6Ax-4B)[C\sin(x)+D\cos(x)]+(2Ax+A+B)[C\cos(x)-D\sin(x)]\big]\\
-                   &=(-2Ax(3C+D)-B(4C+D)+AD)\sin(x)\\
-                   &+(-2Ax(3D+C)-B(4D+C)+AC)\cos(x)\\
-       \end{align*}
-       }
 \end{enumerate}
 }
 
