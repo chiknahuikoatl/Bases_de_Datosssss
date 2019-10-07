@@ -103,6 +103,34 @@ t}
 \item{}
 \item{Jero}
 \item{}
+\item{$f(x)=xe^{-2x}\sin(x)$\\
+           Proponemos la siguiente solución:\\
+           \begin{align*}
+               y_p&=(Ax+B)e^{-2x}\sin(x)+(Cx+D)e^{-2x}\cos(x)\\
+               y_p'&=xe^{-2x}\sin(x)-2(Ax+B)e^{-2x}\sin(x)+(Ax+B)e^{-2x}\cos(x)\\
+                   &+xe^{-2x}\cos(x)-2(Cx+D)e^{-2x}\cos(x)-(Cx+D)e^{-2x}\sin(x)\\
+                   &=xe^{-2x}\big[\sin(x)+\cos(x)\big]
+                        +(Ax+B)e^{-2x}\big[-2\sin(x)+\cos(x)\big]\\
+                   &-(Cx+D)e^{-2x}\big[2\cos(x)+\sin(x)\big]\\
+               y_p''&=-2e^{-2x}\Big[(-2Ax+A-2B)[C\sin(x)+D\cos(x)]+(Ax+B)[C\cos(x)-D\sin(x)]\Big]\\
+                   &+e^{-2x}\Big[-2Ax[C\sin(x)+D\cos(x)]+(-2Ax+A-2B)[C\cos(x)-D\sin(x)]\\
+                   &+Ax[C\cos(x)-D\sin(x)]+(Ax+B)[-C\sin(x)-D\cos(x)]\Big]\\
+                   &=e^{-2x}\Big[(Ax-2A+3B)[C\sin(x)+D\cos(x)]+(A-B)[C\cos(x)-D\sin(x)]\Big]
+           \end{align*}
+           Entonces,
+               Entonces,
+       \begin{align*}
+           xe^{-2x}\sin(x)&=e^{-2x}\big[(Ax-2A+3B)[C\sin(x)+D\cos(x)]+(A-B)[C\cos(x)-D\sin(x)]\big]\\
+           &+2e^{-2x}\big[(-2Ax+A-2B)[C\sin(x)+D\cos(x)]+(Ax+B)[C\cos(x)-D\sin(x)]\big]\\
+           &-3(Ax+B)e^{-2x}[C\sin(x)+D\cos(x)]\\
+           x\sin(x)&=\big[(Ax-2A+3B)[C\sin(x)+D\cos(x)]+(A-B)[C\cos(x)-D\sin(x)]\big]\\
+           &+\big[(-4Ax+2A-4B)[C\sin(x)+D\cos(x)]+(2Ax+2B)[C\cos(x)-D\sin(x)]\big]\\
+           &-(3Ax+3B)[C\sin(x)+D\cos(x)]\\
+           x\sin(x)&=\big[(-6Ax-4B)[C\sin(x)+D\cos(x)]+(2Ax+A+B)[C\cos(x)-D\sin(x)]\big]\\
+                   &=(-2Ax(3C+D)-B(4C+D)+AD)\sin(x)\\
+                   &+(-2Ax(3D+C)-B(4D+C)+AC)\cos(x)\\
+       \end{align*}
+       }
 \end{enumerate}
 }
 
