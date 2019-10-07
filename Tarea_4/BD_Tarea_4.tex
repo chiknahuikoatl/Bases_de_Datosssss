@@ -60,10 +60,14 @@
 \section*{Ejercicio 1}{
 \begin{enumerate}[label=\alph*)]
 \item{Jero}
-\item{}
+\item{ Y user; count(id\_fotografía) $\rightarrow$ total\_fotos (Subir)\\
+}
 \item{}
 \item{Jero}
-\item{}
+\item{r = Y id\_fotografía; count(user) $\rightarrow$ megustas (calificar)\\
+s = $\pi$ user, id\_fotografía, megustas (Subir $\Join$ r )\\
+t = Y user; max(megustas) $\rightarrow$ max\_megustas (s)\\
+$\pi$ user, id\_fotografía (s $\Join$ t )}
 \end{enumerate}
 }
 
@@ -96,8 +100,8 @@ $\pi$ fabricante ($\sigma$ numproductos = 3 (s))}
 \item{Jero}
 \item{r = $\pi$ modelo ($\sigma$ fabricante = 'E' (Producto)) $\Join$ Laptop\\
 s = $\sigma$ hd $<$ 200 (r)\\
-t = $\pi$ modelo, velocidad, ram, hd\_nuevo $\leftarrow$ hd * 1.15, pantalla, precio (s)\\
-t}
+$\pi$ modelo, velocidad, ram, hd\_nuevo $\leftarrow$ hd * 1.15, pantalla, precio (s)\\
+}
 \item{}
 \item{Jero}
 \item{}
