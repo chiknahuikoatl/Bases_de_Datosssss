@@ -69,8 +69,12 @@
     $t =pi$ user ($\sigma$ num\_b $= 0 \wedge$ num\_p$ > 0$ ($Q$))\\
     $pi\ *$ (User $\Join$ t)
     }
-\item{}
-\item{}
+\item{Y user; count(id\_fotografía) $\rightarrow$ total\_fotos (Subir)\\}
+\item{r = $\gamma$ user; count(user) $\rightarrow$ numero (Comentario-foto)
+
+s = $\gamma$ ; max(numero ) $\rightarrow$ numero (r)
+
+r $\Join$ s}
 \item{Un reporte que muestre por usuario y por álbum (galería) el total de fotos
         que haya subido al sitio.\\
     $r = \pi_{\text{user, título\_galería, id\_fotografía}}$ (Usuario $\Join$ Galería
@@ -84,7 +88,10 @@
 
 \section*{Ejercicio 2}{
 \begin{enumerate}[label=\alph*)]
-\item{}
+\item{r = Y id\_fotografía; count(user) $\rightarrow$ megustas (calificar)\\
+s = $\pi$ user, id\_fotografía, megustas (Subir $\Join$ r )\\
+t = Y user; max(megustas) $\rightarrow$ max\_megustas (s)\\
+$\pi$ user, id\_fotografía (s $\Join$ t )}
 \item{¿Qué fabricantes producen computadoras portátiles con un disco duro de
     menos 100 GB?\\
     \begin{figure}[H]
