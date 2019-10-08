@@ -12,6 +12,7 @@
 \usepackage{amsmath}
 \usepackage{enumitem}
 \usepackage{ifsym}
+\usepackage{float}
 
 
 \usepackage{hyperref}
@@ -59,51 +60,104 @@
 
 \section*{Ejercicio 1}{
 \begin{enumerate}[label=\alph*)]
-\item{Jero}
-\item{ Y user; count(id\_fotografía) $\rightarrow$ total\_fotos (Subir)\\
+\item{Toda la información de los usuarios que tienen una página, pero no
+        incluyen blog.\\
+    $r = \pi$ user,  pagina, titulo\_blog (Usuario $\Join$ Página $\Join$ Blog)\\
+    $p = $ user $\gamma$ count(pagina) $\rightarrow$ num\_p (r)\\
+    $b = $ user $\gamma$ count(titulo\_blog) $\rightarrow$ num\_b (r)\\
+    $Q = p \Join b$\\
+    $t =pi$ user ($\sigma$ num\_b $= 0 \wedge$ num\_p$ > 0$ ($Q$))\\
+    $pi\ *$ (User $\Join$ t)
+    }
+\item{}
+\item{}
+\item{Un reporte que muestre por usuario y por álbum (galería) el total de fotos
+        que haya subido al sitio.\\
+    $r = \pi_{\text{user, título\_galería, id\_fotografía}}$ (Usuario $\Join$ Galería
+        $\Join$ Fotografía)\\
+    $s =$usuario,  $\gamma$(count(id\_fotografía)$\rightarrow$ num\_fotos) (Fotografía)\\
+    $\pi $ user, título\_galería, s (Usuario$\Join$ Galería)
 }
 \item{}
-\item{Jero}
-\item{r = Y id\_fotografía; count(user) $\rightarrow$ megustas (calificar)\\
-s = $\pi$ user, id\_fotografía, megustas (Subir $\Join$ r )\\
-t = Y user; max(megustas) $\rightarrow$ max\_megustas (s)\\
-$\pi$ user, id\_fotografía (s $\Join$ t )}
 \end{enumerate}
 }
 
 \section*{Ejercicio 2}{
 \begin{enumerate}[label=\alph*)]
 \item{}
-\item{Jero}
-\item{r = $\sigma$ fabricante = 'B' (Producto)\\
+\item{¿Qué fabricantes producen computadoras portátiles con un disco duro de
+    menos 100 GB?\\
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]
+            {img/b.png}\hfill
+    \end{figure}
+}
+\item{Encontrar el número de modelo y el precio de todos los productos 
+	(de cualquier tipo) fabricados
+	por el fabricante B.\\
+	r = $\sigma$ fabricante = 'B' (Producto)\\
 	s = $\pi$ modelo, precio (Laptop) $\cup$ $\pi$ modelo, precio (PC)
 	$\cup$ $\pi$ modelo, precio (Impresora) \\
 	$\pi$ modelo, precio (s $\Join$ r)}
 \item{}
-\item{Jero}
-\item{r = $\pi$ modelo, fabricante (Producto)\\
+\item{Encontrar los números de modelo de todas las impresoras láser a color.\\
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]
+            {img/e.png}\hfill
+    \end{figure}
+}
+\item{Encontrar toda la información de los fabricantes que venden 
+	laptops pero no PCs.\\
+	r = $\pi$ modelo, fabricante (Producto)\\
 	s = $\pi$ fabricante ($\pi$ modelo (Laptop) $\Join$ r)\\
 	t = $\pi$ fabricante ($\pi$ modelo (PC) $\Join$ r)\\
 	s - t\\}
 \item{}
-\item{Jero}
-\item{r = $\pi$ modelo ($\sigma$ velocidad $\geq$ 2.8 (PC))\\
+\item{Encontrar toda la información de las PCs que tienen la misma velocidad y
+    RAM.\\
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]
+            {img/h.png}\hfill
+    \end{figure}
+}
+\item{Encontrar aquellos fabricantes de mínimo dos computadoras 
+	diferentes (PC o laptops) con
+	velocidades de al menos 2.80 GHz\\
+	r = $\pi$ modelo ($\sigma$ velocidad $\geq$ 2.8 (PC))\\
 s = $\pi$ modelo($\sigma$ velocidad $\geq$ 2.8 (Laptop))\\
 $\pi$ fabricante ((r $\cup$ s) $\Join$ Producto)\\
 }
 \item{}
-\item{Jero}
-\item{r = $\pi$ modelo, fabricante (Producto $\Join$ PC)\\
+\item{Encontrar los fabricantes de PC con al menos tres velocidades diferentes.\\
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]
+            {img/k.png}\hfill
+    \end{figure}
+}
+\item{Encontrar los fabricantes que venden exactamente tres modelos 
+	diferentes de PC.\\
+	r = $\pi$ modelo, fabricante (Producto $\Join$ PC)\\
 s = Y fabricante; count(modelo) $\rightarrow$ numproductos (r)\\
 $\pi$ fabricante ($\sigma$ numproductos = 3 (s))}
 \item{}
-\item{Jero}
-\item{r = $\pi$ modelo ($\sigma$ fabricante = 'E' (Producto)) $\Join$ Laptop\\
-s = $\sigma$ hd $<$ 200 (r)\\
-$\pi$ modelo, velocidad, ram, hd\_nuevo $\leftarrow$ hd * 1.15, pantalla, precio (s)\\
+\item{Crear un reporte que muestre por fabricante, el número de productos que tiene de cada tipo.\\
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]
+            {img/n.png}\hfill
+    \end{figure}
 }
+\item{Incrementar en un 15\% el tamaño del disco duro de las laptops 
+	del fabricante E que sean menores a 200 GB.\\
+	r = $\pi$ modelo ($\sigma$ fabricante = 'E' (Producto)) $\Join$ Laptop\\
+s = $\sigma$ hd $<$ 200 (r)\\
+t = $\pi$ modelo, velocidad, ram, hd\_nuevo $\leftarrow$ hd * 1.15, pantalla, precio (s)\\
+t}
 \item{}
-\item{Jero}
+\item{Borrar las impresoras de inyección de tinta.\\
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]
+            {img/p.png}\hfill
+    \end{figure}}
 \item{}
 \end{enumerate}
 }
