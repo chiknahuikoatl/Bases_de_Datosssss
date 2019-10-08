@@ -92,13 +92,18 @@
             {img/b.png}\hfill
     \end{figure}
 }
-\item{Encontrar el número de modelo y el precio de todos los productos 
+\item{Encontrar el número de modelo y el precio de todos los productos
 	(de cualquier tipo) fabricados
 	por el fabricante B.\\
 	r = $\sigma$ fabricante = 'B' (Producto)\\
 	s = $\pi$ modelo, precio (Laptop) $\cup$ $\pi$ modelo, precio (PC)
 	$\cup$ $\pi$ modelo, precio (Impresora) \\
-	$\pi$ modelo, precio (s $\Join$ r)}
+	$\pi$ modelo, precio (s $\Join$ r)
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]
+            {img/c.png}\hfill
+    \end{figure}
+}
 \item{}
 \item{Encontrar los números de modelo de todas las impresoras láser a color.\\
     \begin{figure}[H]
@@ -106,12 +111,17 @@
             {img/e.png}\hfill
     \end{figure}
 }
-\item{Encontrar toda la información de los fabricantes que venden 
+\item{Encontrar toda la información de los fabricantes que venden
 	laptops pero no PCs.\\
 	r = $\pi$ modelo, fabricante (Producto)\\
 	s = $\pi$ fabricante ($\pi$ modelo (Laptop) $\Join$ r)\\
 	t = $\pi$ fabricante ($\pi$ modelo (PC) $\Join$ r)\\
-	s - t\\}
+	s - t\\
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]
+            {img/f.png}\hfill
+    \end{figure}
+}
 \item{}
 \item{Encontrar toda la información de las PCs que tienen la misma velocidad y
     RAM.\\
@@ -120,12 +130,16 @@
             {img/h.png}\hfill
     \end{figure}
 }
-\item{Encontrar aquellos fabricantes de mínimo dos computadoras 
+\item{Encontrar aquellos fabricantes de mínimo dos computadoras
 	diferentes (PC o laptops) con
 	velocidades de al menos 2.80 GHz\\
 	r = $\pi$ modelo ($\sigma$ velocidad $\geq$ 2.8 (PC))\\
-s = $\pi$ modelo($\sigma$ velocidad $\geq$ 2.8 (Laptop))\\
-$\pi$ fabricante ((r $\cup$ s) $\Join$ Producto)\\
+    s = $\pi$ modelo($\sigma$ velocidad $\geq$ 2.8 (Laptop))\\
+    $\pi$ fabricante ((r $\cup$ s) $\Join$ Producto)\\
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]
+            {img/i.png}\hfill
+    \end{figure}
 }
 \item{}
 \item{Encontrar los fabricantes de PC con al menos tres velocidades diferentes.\\
@@ -134,11 +148,16 @@ $\pi$ fabricante ((r $\cup$ s) $\Join$ Producto)\\
             {img/k.png}\hfill
     \end{figure}
 }
-\item{Encontrar los fabricantes que venden exactamente tres modelos 
+\item{Encontrar los fabricantes que venden exactamente tres modelos
 	diferentes de PC.\\
 	r = $\pi$ modelo, fabricante (Producto $\Join$ PC)\\
-s = Y fabricante; count(modelo) $\rightarrow$ numproductos (r)\\
-$\pi$ fabricante ($\sigma$ numproductos = 3 (s))}
+    s = Y fabricante; count(modelo) $\rightarrow$ numproductos (r)\\
+    $\pi$ fabricante ($\sigma$ numproductos = 3 (s))\\
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]
+            {img/l.png}\hfill
+    \end{figure}
+}
 \item{}
 \item{Crear un reporte que muestre por fabricante, el número de productos que tiene de cada tipo.\\
     \begin{figure}[H]
@@ -146,18 +165,24 @@ $\pi$ fabricante ($\sigma$ numproductos = 3 (s))}
             {img/n.png}\hfill
     \end{figure}
 }
-\item{Incrementar en un 15\% el tamaño del disco duro de las laptops 
+\item{Incrementar en un 15\% el tamaño del disco duro de las laptops
 	del fabricante E que sean menores a 200 GB.\\
 	r = $\pi$ modelo ($\sigma$ fabricante = 'E' (Producto)) $\Join$ Laptop\\
-s = $\sigma$ hd $<$ 200 (r)\\
-t = $\pi$ modelo, velocidad, ram, hd\_nuevo $\leftarrow$ hd * 1.15, pantalla, precio (s)\\
-t}
+    s = $\sigma$ hd $<$ 200 (r)\\
+    t = $\pi$ modelo, velocidad, ram, hd\_nuevo $\leftarrow$ hd * 1.15, pantalla, precio (s)\\
+    t\\
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]
+            {img/o.png}\hfill
+    \end{figure}
+}
 \item{}
 \item{Borrar las impresoras de inyección de tinta.\\
     \begin{figure}[H]
         \includegraphics[width=\textwidth]
             {img/p.png}\hfill
-    \end{figure}}
+    \end{figure}
+}
 \item{}
 \end{enumerate}
 }
