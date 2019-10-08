@@ -82,18 +82,23 @@
         (Fotografía)\\
     $\pi $ user, título\_galería, s (Usuario$\Join$ Galería)
 }
-\item{$\pi$ modelo, velocidad, ram, hd\_nuevo $\leftarrow$
-        hd * 1.15, pantalla, precio (s)\\
+\item{r = Y id\_fotografía; count(user) $\rightarrow$ megustas (calificar)\\
+    s = $\pi$ user, id\_fotografía, megustas (Subir $\Join$ r )\\
+    t = Y user; max(megustas) $\rightarrow$ max\_megustas (s)\\
+    $\pi$ user, id\_fotografía (s $\Join$ t )
 }
 \end{enumerate}
 }
 
 \section*{Ejercicio 2}{
 \begin{enumerate}[label=\alph*)]
-\item{r = Y id\_fotografía; count(user) $\rightarrow$ megustas (calificar)\\
-s = $\pi$ user, id\_fotografía, megustas (Subir $\Join$ r )\\
-t = Y user; max(megustas) $\rightarrow$ max\_megustas (s)\\
-$\pi$ user, id\_fotografía (s $\Join$ t )}
+
+\item{$\sigma$ velocidad $> 3 \wedge$  velocidad  $<  3.5$ (PC)\\
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]
+            {img/a.png}\hfill
+    \end{figure}
+}
 \item{¿Qué fabricantes producen computadoras portátiles con un disco duro de
     menos 100 GB?\\
     \begin{figure}[H]
@@ -113,7 +118,20 @@ $\pi$ user, id\_fotografía (s $\Join$ t )}
             {img/c.png}\hfill
     \end{figure}
 }
-\item{}
+\item{r = $\pi$ model, maker (Product)
+
+    s = $\pi$ maker ($\pi$ model (Laptop) $\Join$ r)
+
+    t = $\pi$ maker ($\pi$ model (PC) $\Join$ r)
+
+    v = $\pi$ maker ($\pi$ model (Printer) $\Join$ r)
+
+    s $\cap$ t $\cap$ v
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]
+            {img/d.png}\hfill
+    \end{figure}
+}
 \item{Encontrar los números de modelo de todas las impresoras láser a color.\\
     \begin{figure}[H]
         \includegraphics[width=\textwidth]
@@ -131,7 +149,15 @@ $\pi$ user, id\_fotografía (s $\Join$ t )}
             {img/f.png}\hfill
     \end{figure}
 }
-\item{}
+\item{s = $\gamma$ hd ; count(hd) $\rightarrow$ tipos (PC)
+
+    $\pi$ hd ($\sigma$ tipos $\geq$ 2 (s))
+
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]
+            {img/g.png}\hfill
+    \end{figure}
+}
 \item{Encontrar toda la información de las PCs que tienen la misma velocidad y
     RAM.\\
     \begin{figure}[H]
@@ -167,13 +193,19 @@ $\pi$ user, id\_fotografía (s $\Join$ t )}
             {img/l.png}\hfill
     \end{figure}
 }
-\item{}
+\item{Laptop $\Join$ price = max ($\Gamma$ ; max(price) $\rightarrow$ max (Laptop))\\
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]
+            {img/m.png}\hfill
+    \end{figure}
+}
 \item{Crear un reporte que muestre por fabricante, el número de productos que tiene de cada tipo.\\
     \begin{figure}[H]
         \includegraphics[width=\textwidth]
             {img/n.png}\hfill
     \end{figure}
 }
+\item{}
 \item{Incrementar en un 15\% el tamaño del disco duro de las laptops
 	del fabricante E que sean menores a 200 GB.\\
 	r = $\pi$ modelo ($\sigma$ fabricante = 'E' (Producto)) $\Join$ Laptop\\
@@ -185,7 +217,6 @@ $\pi$ user, id\_fotografía (s $\Join$ t )}
             {img/o.png}\hfill
     \end{figure}
 }
-\item{}
 \item{Borrar las impresoras de inyección de tinta.\\
     \begin{figure}[H]
         \includegraphics[width=\textwidth]
