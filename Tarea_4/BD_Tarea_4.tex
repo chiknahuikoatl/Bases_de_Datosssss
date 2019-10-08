@@ -70,19 +70,21 @@
     $pi\ *$ (User $\Join$ t)
     }
 \item{Y user; count(id\_fotografía) $\rightarrow$ total\_fotos (Subir)\\}
-\item{r = $\gamma$ user; count(user) $\rightarrow$ numero (Comentario-foto)
-
-s = $\gamma$ ; max(numero ) $\rightarrow$ numero (r)
-
-r $\Join$ s}
+\item{r = $\gamma$ user; count(user) $\rightarrow$ numero (Comentario-foto)\\
+      s = $\gamma$ ; max(numero ) $\rightarrow$ numero (r)\\
+      r $\Join$ s
+}
 \item{Un reporte que muestre por usuario y por álbum (galería) el total de fotos
         que haya subido al sitio.\\
-    $r = \pi_{\text{user, título\_galería, id\_fotografía}}$ (Usuario $\Join$ Galería
-        $\Join$ Fotografía)\\
-    $s =$usuario,  $\gamma$(count(id\_fotografía)$\rightarrow$ num\_fotos) (Fotografía)\\
+    $r = \pi_{\text{user, título\_galería, id\_fotografía}}$ (Usuario $\Join$
+        Galería $\Join$ Fotografía)\\
+    $s =$usuario,  $\gamma$(count(id\_fotografía)$\rightarrow$ num\_fotos)
+        (Fotografía)\\
     $\pi $ user, título\_galería, s (Usuario$\Join$ Galería)
 }
-\item{}
+\item{$\pi$ modelo, velocidad, ram, hd\_nuevo $\leftarrow$
+        hd * 1.15, pantalla, precio (s)\\
+}
 \end{enumerate}
 }
 
