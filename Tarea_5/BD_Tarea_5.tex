@@ -62,15 +62,30 @@
 \item{
     \textbf{Preguntas de repaso:}
     \begin{itemize}
-    \item{¿Qué es una dependencia funcional y cómo se define?\\}
-    \item{¿Para qué sirve el concepto de dependencia en la normalización?\\}
+    \item{¿Qué es una dependencia funcional y cómo se define?\\
+        Una dependencia funcional es una relación unidireccional entre dos
+        atributos tal que para algún valor de B, solamente tiene relacionado uno
+        de A por medio de la relación.\\
+        Se definen cómo $A\rightarrow B$.
+    }
+    \item{¿Para qué sirve el concepto de dependencia en la normalización?\\
+        Para eliminar o en su defecto reducir la redundancia en un base de datos.
+    }
     \item{Sea A la llave de R(A, B, C). Indica todas las dependencias
             funcionales que implica A.\\
+        $$A\rightarrow B;\ \ A\rightarrow C$$
+        Y, cómo relación trivial, $A\rightarrow A$.
     }
     \item{¿Qué es una forma normal? ¿Cuál es el objetivo de normalizar un modelo
             de datos?\\
+        Una forma normal es una manera de, por medio de reglas sobre las
+        relaciones, descomponer los datos de la base de tal manera que se haya
+        reducido al redundancia.\\
+        El objetivo de normalizr es un modelo de datos es reducir en la mayor
+        medida posible la redundancia en una base de datos.
     }
     \item{¿En qué casos es preferible lograr 3NF en vez de BCNF?\\
+        Cuándo no se desea descomponer más el esquema.
     }
     \end{itemize}
 }
