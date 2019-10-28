@@ -74,7 +74,82 @@
     }
     \end{itemize}
 }
-Los isótopos si
+\item {Proporciona algunos ejemplos que demuestren que las siguientes reglas
+	no son válidas:
+\begin{enumerate}
+	\item Si A → B, entonces B → A\\
+	Sea la relación R(restaurante,ciudad,teléfono).\\
+	Se tiene la DF $restaurante \rightarrow ciudad$, ya que un restaurante tiene
+	asociada una sola ciudad, pero notemos que la DF $ciudad \rightarrow
+	restaurante$ no se da, ya que una ciudad tiene varios restaurantes. \\
+	Por lo que A $\rightarrow$ B no implica que B $\rightarrow$ A
+\end{enumerate}}
+\item {Para cada uno de los esquemas que se muestran a continuación:
+\begin{enumerate}
+	\item R(A,B,C,D,E) con F = \{AB $\rightarrow$ CD, E $\rightarrow$ C, D
+		$\rightarrow$ B\}
+	\item R(A,B,C,D,E)con F = \{AB $\rightarrow$ C, DE $\rightarrow$ C, B $\rightarrow$ D\}
+\end{enumerate}
+\begin{itemize}
+	\item Especifica de  ser  posible dos DF  no  triviales que  se  pueden
+	derivar  de  las  dependencias funcionales dadas.\\
+	a. \{AB $\rightarrow$ C, AB $\rightarrow$ D\}.\\
+	\item Indica alguna llave candidata para R.\\
+	a.\{ABE\}+=\{ABCDE\}\\
+	\item Especifica todas las violaciones a la BCNF\\
+	a.\{AB $\rightarrow$ CD, E $\rightarrow$ C, D
+	$\rightarrow$ B\}
+	\item Normaliza de acuerdo a BCNF, asegúrate de indicar cuáles son las
+	relaciones resultantes con sus respectivas dependencias funcionales:\\
+	a. Tomamos la violación AB $\rightarrow$ CD.\\
+	Obtenemos las relación S(A,B,C,D) con dependecias \{AB $\rightarrow$ CD,
+	D $\rightarrow$ B\} y la relación T(A,B,E) con dependencias \{ABE $\rightarrow$ ABE\}.\\
+	\{AB\}+=\{ABCD\} es una llave para S, entonces tomamos la violación D $\rightarrow$ B.\\
+	Obtenemos la relación U(D,B) con dependencia \{D $\rightarrow$ B\} y la
+	relación V(D,A,C) con dependencia \{DAC $\rightarrow$ DAC\}.\\
+	Por lo tanto el esquema en BCNF es U(D,B), V(D,A,C) y T(A,B,E).
+\end{itemize}}
+\item Para cada una de  las  siguientes  relaciones  con  su  respectivo  conjunto  de  dependencias funcionales:
+\begin{enumerate}
+	\item R(A,B,C,D,E,F)con F = \{B $\rightarrow$ D, B $\rightarrow$ E, D $\rightarrow$ F, AB $\rightarrow$ C\}
+	\item R(A,B,C,D,E)con F = \{A $\rightarrow$ BC, B $\rightarrow$ D, CD$\rightarrow$ E, E $\rightarrow$ A \}
+\end{enumerate}
+\begin{itemize}
+	\item Indica todas las violaciones a la 3NF\\
+	b.\{A\}+ = \{ABCDE\} y \{E\}+ = \{EABCD\} son llaves, entonces la única
+	violación a la 3NF es B $\rightarrow$ D.
+	\item Normaliza de acuerdo a la 3NF\\
+	b. Superfluos por la izquiera:  CD $\rightarrow$ E\\
+	¿C es superfluo? D $\rightarrow$ E, \{D\}+=\{D\} entonces C no es superfluo.\\
+	¿D es superfluo? C $\rightarrow$ E, \{C\}+=\{C\} entonces D no es superfluo.\\
+	Superfluos por la derecha: A $\rightarrow$ BC\\
+	¿B es superfluo? A $\rightarrow$ C, F'=\{A$\rightarrow$C, B$\rightarrow$D, CD$\rightarrow$E, E$\rightarrow$A\}.\\
+	\{A\}+= \{AC\} por lo tanto, B no es superfluo.\\
+	¿C es superfluo? A$\rightarrow$B F''=\{A$\rightarrow$B, B$\rightarrow$D, CD$\rightarrow$E, E$\rightarrow$A\}.\\
+	\{A\}+= \{AB\} por lo tanto, C no es superfluo.\\
+	Entonces F ya es el mínimo.\\
+	S(A,B,C), T(B,D), U(C,D,E) y V(E,A) es el esquema en 3NF.
+\end{itemize}
+\item
+
+\item Para  cada  uno  de  los  esquemas,  con  su  respectivo  conjunto  de  dependencias  multivaluadas, resuelve los siguientes puntos:\\
+\begin{enumerate}
+	\item R(A,B,C,D)con DMV = {AB $\twoheadrightarrow$C, B $\rightarrow$ D}
+	\item R(A,B,C,D,E)con DMV = { A $\twoheadrightarrow$B, AB $\rightarrow$ C, A $\rightarrow$ D, AB $\rightarrow$ E}\\
+\end{enumerate}
+\begin{itemize}
+	\item Encuentra todas las violaciones a la 4NF.
+	\{AB\}+=\{ABCDE\} es una llave. Las violaciones son \{A$\twoheadrightarrow$B\}.\\
+	\item Normaliza de acuerdo a la 4NF.\\
+	Tomamos la violación A$\twoheadrightarrow$B.\\
+	Obtenemos las relaciones S(A,B) con DMV=\{A$\twoheadrightarrow$B\} y
+	T(A,C,D,E) con DMV=\{A$\rightarrow$\}.\\
+	\{ACE\}+=\{ACED\} es una llave para T, entonces tomamos la violación
+	A$\rightarrow$D.\\
+	Obtenemos las relaciones U(A,D) con DMV=\{A$\rightarrow$\} y V(A,C,E) con
+	DMV=\{ACE$\rightarrow$\}.\\
+	Por lo tanto, el esquema en 4NF es S(A,B), U(A,D) y V(A,C,E).
+\end{itemize}
 \end{enumerate}
 
 \end{document}
