@@ -98,6 +98,14 @@
 	asociada una sola ciudad, pero notemos que la DF $ciudad \rightarrow
 	restaurante$ no se da, ya que una ciudad tiene varios restaurantes. \\
 	Por lo que A $\rightarrow$ B no implica que B $\rightarrow$ A
+
+    \item Si A $\twoheadrightarrow$ C, entonces A → C\\
+        Sea R(usuario, teléfono).\\
+        Es fácil ver que usuario $\twoheadrightarrow$ teléfono. Por otro lado,
+        si tuvieramos que teléfono → usuario entonces la dependencia no podría
+        ser multivaludada porque en el caso en el que un usuario tuviera dos o
+        más teléfonos tendríamos que dos telefonos determinan funcionalmente a
+        un usuario y eso es contrario a la definción de dependencia funcional.
 \end{enumerate}}
 \item {Para cada uno de los esquemas que se muestran a continuación:
 \begin{enumerate}
@@ -166,5 +174,9 @@
 	Por lo tanto, el esquema en 4NF es S(A,B), U(A,D) y V(A,C,E).
 \end{itemize}
 \end{enumerate}
+
+
+
+
 
 \end{document}
