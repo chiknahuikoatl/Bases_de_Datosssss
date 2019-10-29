@@ -62,17 +62,40 @@
 \item{
     \textbf{Preguntas de repaso:}
     \begin{itemize}
-        \item 1
-        \item 2
+    \item{¿Qué es una dependencia funcional y cómo se define?\\
+        Una dependencia funcional es una relación unidireccional entre dos
+        atributos tal que para algún valor de B, solamente tiene relacionado uno
+        de A por medio de la relación.\\
+        Se definen cómo $A\rightarrow B$.
+    }
+    \item{¿Para qué sirve el concepto de dependencia en la normalización?\\
+        Para eliminar o en su defecto reducir la redundancia en un base de datos.
+    }
+            funcionales que implica A.\\
+    \item{Sea A la llave de R(A, B, C). Indica todas las dependencias
+        $$A\rightarrow B;\ \ A\rightarrow C$$
+        Y, cómo relación trivial, $A\rightarrow A$.
+    }
+    \item{¿Qué es una forma normal? ¿Cuál es el objetivo de normalizar un modelo
+            de datos?\\
+        Una forma normal es una manera de, por medio de reglas sobre las
+        relaciones, descomponer los datos de la base de tal manera que se haya
+        reducido al redundancia.\\
+        El objetivo de normalizr es un modelo de datos es reducir en la mayor
+        medida posible la redundancia en una base de datos.
+    }
+    \item{¿En qué casos es preferible lograr 3NF en vez de BCNF?\\
+        Cuándo no se desea descomponer más el esquema.
+    }
     \end{itemize}
 }
-\item {Proporciona algunos ejemplos que demuestren que las siguientes reglas 
+\item {Proporciona algunos ejemplos que demuestren que las siguientes reglas
 	no son válidas:
 \begin{enumerate}
 	\item Si A → B, entonces B → A\\
 	Sea la relación R(restaurante,ciudad,teléfono).\\
-	Se tiene la DF $restaurante \rightarrow ciudad$, ya que un restaurante tiene 
-	asociada una sola ciudad, pero notemos que la DF $ciudad \rightarrow 
+	Se tiene la DF $restaurante \rightarrow ciudad$, ya que un restaurante tiene
+	asociada una sola ciudad, pero notemos que la DF $ciudad \rightarrow
 	restaurante$ no se da, ya que una ciudad tiene varios restaurantes. \\
 	Por lo que A $\rightarrow$ B no implica que B $\rightarrow$ A
 \end{enumerate}}
@@ -83,7 +106,7 @@
 	\item R(A,B,C,D,E)con F = \{AB $\rightarrow$ C, DE $\rightarrow$ C, B $\rightarrow$ D\}
 \end{enumerate}
 \begin{itemize}
-	\item Especifica de  ser  posible dos DF  no  triviales que  se  pueden  
+	\item Especifica de  ser  posible dos DF  no  triviales que  se  pueden
 	derivar  de  las  dependencias funcionales dadas.\\
 	a. \{AB $\rightarrow$ C, AB $\rightarrow$ D\}.\\
 	\item Indica alguna llave candidata para R.\\
@@ -91,7 +114,7 @@
 	\item Especifica todas las violaciones a la BCNF\\
 	a.\{AB $\rightarrow$ CD, E $\rightarrow$ C, D
 	$\rightarrow$ B\}
-	\item Normaliza de acuerdo a BCNF, asegúrate de indicar cuáles son las 
+	\item Normaliza de acuerdo a BCNF, asegúrate de indicar cuáles son las
 	relaciones resultantes con sus respectivas dependencias funcionales:\\
 	a. Tomamos la violación AB $\rightarrow$ CD.\\
 	Obtenemos las relación S(A,B,C,D) con dependecias \{AB $\rightarrow$ CD,
@@ -108,7 +131,7 @@
 \end{enumerate}
 \begin{itemize}
 	\item Indica todas las violaciones a la 3NF\\
-	b.\{A\}+ = \{ABCDE\} y \{E\}+ = \{EABCD\} son llaves, entonces la única 
+	b.\{A\}+ = \{ABCDE\} y \{E\}+ = \{EABCD\} son llaves, entonces la única
 	violación a la 3NF es B $\rightarrow$ D.
 	\item Normaliza de acuerdo a la 3NF\\
 	b. Superfluos por la izquiera:  CD $\rightarrow$ E\\
@@ -122,7 +145,7 @@
 	Entonces F ya es el mínimo.\\
 	S(A,B,C), T(B,D), U(C,D,E) y V(E,A) es el esquema en 3NF.
 \end{itemize}
-\item 
+\item
 
 \item Para  cada  uno  de  los  esquemas,  con  su  respectivo  conjunto  de  dependencias  multivaluadas, resuelve los siguientes puntos:\\
 \begin{enumerate}
