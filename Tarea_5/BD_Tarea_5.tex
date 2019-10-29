@@ -69,7 +69,8 @@
         Se definen cómo $A\rightarrow B$.
     }
     \item{¿Para qué sirve el concepto de dependencia en la normalización?\\
-        Para eliminar o en su defecto reducir la redundancia en un base de datos.
+        Para eliminar o en su defecto reducir la redundancia en un base de
+        datos.
     }
             funcionales que implica A.\\
     \item{Sea A la llave de R(A, B, C). Indica todas las dependencias
@@ -101,9 +102,18 @@
 	
 	\item Si AB → C, entonces A → C y B → C
 	
-	Sea la relación R(asignatura,alumno,grupo).
 	
+	Sea la relación R(asignatura,alumno,grupo).
 	Se tiene que la DF $asignatura-alumno \rightarrow grupo$, ya que cada alumno acude a una asignatura , y esa asignatura con ese alumno tiene un grupo asignado especifico, pero notemos que la DF $asignatura \rightarrow grupo$ y $alumno \rightarrow grupo$ no se dan ya que , dicha asignatura puede ser dada a distintos grupos y un alumno puede estar inscrito en varios grupos.  
+
+    \item Si A $\twoheadrightarrow$ C, entonces A → C\\
+
+        Sea R(usuario, teléfono).\\
+        Es fácil ver que usuario $\twoheadrightarrow$ teléfono. Por otro lado,
+        si tuvieramos que teléfono → usuario entonces la dependencia no podría
+        ser multivaludada porque en el caso en el que un usuario tuviera dos o
+        más teléfonos tendríamos que dos telefonos determinan funcionalmente a
+        un usuario y eso es contrario a la definción de dependencia funcional.
 \end{enumerate}}
 \item Para cada uno de los esquemas que se muestran a continuación:
 \begin{enumerate}
@@ -150,15 +160,31 @@ Asi concluyendo que la relación U y V ya estan en BCNF y terminanando la Normal
 \end{itemize}
 \item Para cada una de  las  siguientes  relaciones  con  su  respectivo  conjunto  de  dependencias funcionales:
 \begin{enumerate}
-	\item R(A,B,C,D,E,F)con F = \{B $\rightarrow$ D, B $\rightarrow$ E, D $\rightarrow$ F, AB $\rightarrow$ C\}
+	\item R(A,B,C,D,E,F)con F = \{B $\rightarrow$ D, B $\rightarrow$ E,
+            D $\rightarrow$ F, AB $\rightarrow$ C\}\\
+
 	\item R(A,B,C,D,E)con F = \{A $\rightarrow$ BC, B $\rightarrow$ D, CD$\rightarrow$ E, E $\rightarrow$ A \}
 \end{enumerate}
 \begin{itemize}
 	\item Indica todas las violaciones a la 3NF\\
-	b.\{A\}+ = \{ABCDE\} y \{E\}+ = \{EABCD\} son llaves, entonces la única
-	violación a la 3NF es B $\rightarrow$ D.
+    \begin{itemize}
+    \item[a.] La única violación a la 3NF es D$\rightarrow$F.\\
+        Podemos observar también que F se minimiza de la siguiente manera:\\
+        F'=\{B $\rightarrow$ ED, D $\rightarrow$ F, AB $\rightarrow$ C\}\\
+	\item[b.]\{A\}+ = \{ABCDE\} y \{E\}+ = \{EABCD\} son llaves, entonces la
+        única violación a la 3NF es B $\rightarrow$ D.
+    \end{itemize}
 	\item Normaliza de acuerdo a la 3NF\\
-	b. Superfluos por la izquiera:  CD $\rightarrow$ E\\
+    \begin{itemize}
+    \item[a.]Superfluos por la izquierda: AB$\rightarrow$\\
+    ¿A es superfluo por la izquierda? \{B\}+=\{BDEF\}, entonces A no es superfluo.\\
+    ¿B es superfluo? \{A\}+=\{A\}, entonces B no es superfluo.\\
+    Superfluos por la derecha: B $\rightarrow$ ED\\
+    ¿E es superfluo? \{B\}+=\{ED\}, entonces E no lo es.\\
+    ¿D es superfluo? \{B\}+=\{ED\}, entonces D no lo es.\\
+    Por lo tanto, el esquema en 3NF es:
+    S(B,E,D), T(D,F), U(A,B,C)
+	\item[b.] Superfluos por la izquierda:  CD $\rightarrow$ E\\
 	¿C es superfluo? D $\rightarrow$ E, \{D\}+=\{D\} entonces C no es superfluo.\\
 	¿D es superfluo? C $\rightarrow$ E, \{C\}+=\{C\} entonces D no es superfluo.\\
 	Superfluos por la derecha: A $\rightarrow$ BC\\
@@ -168,6 +194,7 @@ Asi concluyendo que la relación U y V ya estan en BCNF y terminanando la Normal
 	\{A\}+= \{AB\} por lo tanto, C no es superfluo.\\
 	Entonces F ya es el mínimo.\\
 	S(A,B,C), T(B,D), U(C,D,E) y V(E,A) es el esquema en 3NF.
+    \end{itemize}
 \end{itemize}
 \item Sea el esquema: 
 $$\textbf{R(A,B,C,D,E,F) con F={BD → E, CD → A, E → C, B → D}}$$
@@ -303,5 +330,9 @@ Sus Cerraduras solo se contienen a ellas mismas , por lo que no pueden alcanzar 
 		\end{enumerate}
 	\end{itemize}
 \end{enumerate}
+
+
+
+
 
 \end{document}
