@@ -180,17 +180,26 @@
 	\item R(A,B,C,D,E)con DMV = { A $\twoheadrightarrow$B, AB $\rightarrow$ C, A $\rightarrow$ D, AB $\rightarrow$ E}\\
 \end{enumerate}
 \begin{itemize}
-	\item Encuentra todas las violaciones a la 4NF.
-	\{AB\}+=\{ABCDE\} es una llave. Las violaciones son \{A$\twoheadrightarrow$B\}.\\
+	\item Encuentra todas las violaciones a la 4NF.\\
+        \begin{itemize}
+        \item[a.]\{AB\}+=\{ABCD\} es una llave y no hay violaciones
+        \item[b.]\{AB\}+=\{ABCDE\} es una llave. Las violaciones son
+            \{A$\twoheadrightarrow$B\}.\\
+        \end{itemize}
 	\item Normaliza de acuerdo a la 4NF.\\
-	Tomamos la violación A$\twoheadrightarrow$B.\\
-	Obtenemos las relaciones S(A,B) con DMV=\{A$\twoheadrightarrow$B\} y
-	T(A,C,D,E) con DMV=\{A$\rightarrow$\}.\\
-	\{ACE\}+=\{ACED\} es una llave para T, entonces tomamos la violación
-	A$\rightarrow$D.\\
-	Obtenemos las relaciones U(A,D) con DMV=\{A$\rightarrow$\} y V(A,C,E) con
-	DMV=\{ACE$\rightarrow$\}.\\
-	Por lo tanto, el esquema en 4NF es S(A,B), U(A,D) y V(A,C,E).
+    \begin{itemize}
+        \item[a.] Dividimos la relación en dos esquemas:\\
+            U(A,B,C) y V(B,D).\\
+            Ambos esquemas ya están en 4NF.
+        \item[b.] Tomamos la violación A$\twoheadrightarrow$B.\\
+            Obtenemos las relaciones S(A,B) con DMV=\{A$\twoheadrightarrow$B\} y
+            T(A,C,D,E) con DMV=\{A$\rightarrow$\}.\\
+            \{ACE\}+=\{ACED\} es una llave para T, entonces tomamos la violación
+            A$\rightarrow$D.\\
+            Obtenemos las relaciones U(A,D) con DMV=\{A$\rightarrow$\} y
+            V(A,C,E) con DMV=\{ACE$\rightarrow$\}.\\
+            Por lo tanto, el esquema en 4NF es S(A,B), U(A,D) y V(A,C,E).
+    \end{itemize}
 \end{itemize}
 
 \item Se tiene la siguiente relación:\\
