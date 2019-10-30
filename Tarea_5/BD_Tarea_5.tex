@@ -207,6 +207,15 @@
             F=\{idEnfermo nombreCirugía $\rightarrow$ medicinaSuministrada,\\
                 medicinaSuministrada $\rightarrow$ efectosSecundarios,\\
                 efectosSecundarios $\rightarrow$ medicinaSuministrada\}
+        \item Especifica otras dependencias funcionales o multivaluadas que
+            deban satisfacerse en la relación R. Por cada una que definas,
+            deberá aparecer un enunciado en español como en el inciso anterior.
+            Un cirujano atiende a un enfermo y le receta una medicina en una
+            cierta fecha.\\
+            Un enfermo tiene un nombre y una direcicón.\\
+            F'=F$\cup$\{idCirujano $\rightarrow$ idEnfermo medicinaSuministrada,
+                            fechaCirugía,\\
+                        idEnfermo $\rightarrow$ nombreEnfermo direcciónEnfermo\}
 
     \end{itemize}
 \end{enumerate}
