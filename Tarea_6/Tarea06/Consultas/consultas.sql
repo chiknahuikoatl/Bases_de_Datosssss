@@ -1,4 +1,5 @@
---a. Encontrar el nombre y la ciudad de todos los empleados que trabajan en PEMEX.
+--a. Encontrar el nombre y la ciudad de todos los empleados que trabajan en
+--  PEMEX.
 SELECT nombre, ciudad
     FROM (Empleado e JOIN Trabajar t ON t.CURP = e.CURP) JOIN
             Empresa em ON t.RFC = em.RFC
@@ -29,10 +30,15 @@ SELECT compañia, DATEPART(y, t.fechaIngreso) año,
 --n. Información de los proyectos en los que colaboran los empleados que son
 --  directores.
 
-SELECT
+SELECT p.numProyecto, p.nombreProyecto, p.fechaInicio, p.fechaFin, p.RFCEmpresa
     FROM (Dirigir d INNER JOIN Colaborar c ON d.CURP = c.CURP) INNER JOIN
             Proyecto p ON p.numProyecto = c.numProyecto
+
+-- r. Encontrar la información de las compañías que tienen al menos dos
+--  empleados en la misma ciudad en que tienen sus instalaciones.
+
+SELECT
+    FROM 
     WHERE
 
-
---rv
+--v
