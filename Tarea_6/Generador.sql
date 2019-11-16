@@ -2,40 +2,39 @@
 USE Master;
 
 -- --Validamos en sys si la base ya existe
--- PRINT N'Validamos si la base no existe';
--- IF EXISTS (SELECT 1 FROM sys.databases WHERE [name] = 'FBD2020-1-3815')
--- BEGIN
--- PRINT N'Borramos la base preexistente';
---
+PRINT N'Validamos si la base no existe';
+IF EXISTS (SELECT 1 FROM sys.databases WHERE [name] = 'Tarea6')
+BEGIN
+PRINT N'Borramos la base preexistente';
+
 -- --Borramos la base si existe
--- DROP DATABASE [FBD2020-1-3815]
--- END;
--- GO
---
--- PRINT N'Creamos la base de datos';
+DROP DATABASE [Tarea6]
+END;
+GO
+
+PRINT N'Creamos la base de datos';
 -- --Creamos la base
--- CREATE DATABASE [FBD2020-1-3815]
--- ON PRIMARY
--- (
--- NAME = 'FBD2020-1-3815',
--- FILENAME = '/fbd/fundamentos/FBD2020-1-3815.mdf',
--- SIZE = 10MB,
--- MAXSIZE = UNLIMITED,
--- FILEGROWTH = 50%
--- )
--- LOG ON
--- (
--- NAME = 'FBD2020-1-3815_Log',
--- FILENAME = '/fbd/fundamentos/FBD2020-1-3815.ldf',
--- SIZE = 2MB,
--- MAXSIZE = 100MB,
--- FILEGROWTH = 2MB
--- );
--- PRINT N'Base de datos creada correctamente';
--- GO
---
--- USE [FBD2020-1-3815];
--- GO
+CREATE DATABASE [Tarea6]
+ON PRIMARY
+(
+NAME = 'Tarea6',
+FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL14.EMILIANOFS\MSSQL\DATA\Tarea6.mdf',
+SIZE = 10MB,
+MAXSIZE = UNLIMITED,
+FILEGROWTH = 50%
+)
+LOG ON
+(
+NAME = 'Tarea6_Log',
+FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL14.EMILIANOFS\MSSQL\DATA\Tarea6.ldf',
+SIZE = 2MB,
+MAXSIZE = 100MB,
+FILEGROWTH = 2MB
+);
+PRINT N'Base de datos creada correctamente';
+GO
+
+USE [Tarea6];
 
 IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Empleado')
 BEGIN
@@ -131,7 +130,7 @@ CREATE TABLE Colaborar (
 );
 
 CREATE TABLE Supervisar (
-    CURPSupervidado nchar(18) UNIQUE NOT NULL,
+  CURPSupervidado nchar(18) UNIQUE NOT NULL,
   CURPSupervisor nchar(18) NOT NULL,
   PRIMARY KEY (CURPSupervidado)
 );
@@ -141,10 +140,10 @@ CREATE TABLE Empresa (
   razonSocial nvarchar(255) NULL,
   calle nvarchar(255) NOT NULL,
   num int NOT NULL,
-  CP nvarchar(5) NOT NULL,
+  CPE nvarchar(5) NOT NULL,
   PRIMARY KEY (RFC),
-  CONSTRAINT CP
-  CHECK (CP LIKE '[0-9][0-9][0-9][0-9][0-9]')
+  CONSTRAINT CPE
+  CHECK (CPE LIKE '[0-9][0-9][0-9][0-9][0-9]')
 );
 
 CREATE TABLE Proyecto (
@@ -155,7 +154,3 @@ CREATE TABLE Proyecto (
   RFCEmpresa nvarchar(13),
   PRIMARY KEY (numProyecto)
 );
-
-PRINT N'Tablas creadas exitosamente';
-END;
-GO
