@@ -130,7 +130,7 @@ CREATE TABLE Colaborar (
 );
 
 CREATE TABLE Supervisar (
-  CURPSupervidado nchar(18) UNIQUE NOT NULL,
+  CURPSupervisado nchar(18) UNIQUE NOT NULL,
   CURPSupervisor nchar(18) NOT NULL,
   PRIMARY KEY (CURPSupervidado)
 );
