@@ -99,12 +99,12 @@
 	asociada una sola ciudad, pero notemos que la DF $ciudad \rightarrow
 	restaurante$ no se da, ya que una ciudad tiene varios restaurantes. \\
 	Por lo que A $\rightarrow$ B no implica que B $\rightarrow$ A
-	
+
 	\item Si AB → C, entonces A → C y B → C
-	
-	
+
+
 	Sea la relación R(asignatura,alumno,grupo).
-	Se tiene que la DF $asignatura-alumno \rightarrow grupo$, ya que cada alumno acude a una asignatura , y esa asignatura con ese alumno tiene un grupo asignado especifico, pero notemos que la DF $asignatura \rightarrow grupo$ y $alumno \rightarrow grupo$ no se dan ya que , dicha asignatura puede ser dada a distintos grupos y un alumno puede estar inscrito en varios grupos.  
+	Se tiene que la DF $asignatura-alumno \rightarrow grupo$, ya que cada alumno acude a una asignatura , y esa asignatura con ese alumno tiene un grupo asignado especifico, pero notemos que la DF $asignatura \rightarrow grupo$ y $alumno \rightarrow grupo$ no se dan ya que , dicha asignatura puede ser dada a distintos grupos y un alumno puede estar inscrito en varios grupos.
 
     \item Si A $\twoheadrightarrow$ C, entonces A → C\\
 
@@ -126,16 +126,16 @@
 	derivar  de  las  dependencias funcionales dadas.\\
 	a. \{AB $\rightarrow$ C, AB $\rightarrow$ D\}.\\
 	b. \{BE $\rightarrow$ C, AB $\rightarrow$ AD , AB $\rightarrow$ CAD\}.
-	
+
 	\item Indica alguna llave candidata para R.\\
 	a.\{ABE\}+=\{ABCDE\}\\
 	b.\{ABE\}+=\{ABCDE\}
-	
+
 	\item Especifica todas las violaciones a la BCNF\\
 	a.\{AB $\rightarrow$ CD, E $\rightarrow$ C, D
 	$\rightarrow$ B\}
-	
-	b.\{AB $\rightarrow$ C, DE $\rightarrow$ C, B $\rightarrow$ D\} 
+
+	b.\{AB $\rightarrow$ C, DE $\rightarrow$ C, B $\rightarrow$ D\}
 	\item Normaliza de acuerdo a BCNF, asegúrate de indicar cuáles son las
 	relaciones resultantes con sus respectivas dependencias funcionales:\\
 	a. Tomamos la violación AB $\rightarrow$ CD.\\
@@ -145,10 +145,10 @@
 	Obtenemos la relación U(D,B) con dependencia \{D $\rightarrow$ B\} y la
 	relación V(D,A,C) con dependencia \{DAC $\rightarrow$ DAC\}.\\
 	Por lo tanto el esquema en BCNF es U(D,B), V(D,A,C) y T(A,B,E).
-	
+
 	b. Tomamos la violación B $\rightarrow$ D.
 	Obtenemos la relación S(B,D) con dependencias \{B $\rightarrow$ D\} y la relación T(B,A,C,E) con dependencias \{AB $\rightarrow$ C \} y perdemos la dependecia \{DE $\rightarrow$ C\}.
-	
+
 La relación S ya esta en forma BCNF mientras que  T no, asi que encontramos una llave para T que sera ABE y dividimos T en las relaciones U(A,B,C) con dependencia \{AB $\rightarrow$ C\} y la relación V(A,B,E) sin ninguna dependencia.
 
 Asi concluyendo que la relación U y V ya estan en BCNF y terminanando la Normalizacion
@@ -156,7 +156,7 @@ Asi concluyendo que la relación U y V ya estan en BCNF y terminanando la Normal
 
 
 
-	
+
 \end{itemize}
 \item Para cada una de  las  siguientes  relaciones  con  su  respectivo  conjunto  de  dependencias funcionales:
 \begin{enumerate}
@@ -196,39 +196,39 @@ Asi concluyendo que la relación U y V ya estan en BCNF y terminanando la Normal
 	S(A,B,C), T(B,D), U(C,D,E) y V(E,A) es el esquema en 3NF.
     \end{itemize}
 \end{itemize}
-\item Sea el esquema: 
+\item Sea el esquema:
 $$\textbf{R(A,B,C,D,E,F) con F={BD → E, CD → A, E → C, B → D}}$$
 
 \begin{enumerate}
-	\item ¿Qué puedes decir de \textbf{\{A\}+} y \textbf{\{F\}+}? 
-	
+	\item ¿Qué puedes decir de \textbf{\{A\}+} y \textbf{\{F\}+}?
+
 Sus Cerraduras solo se contienen a ellas mismas , por lo que no pueden alcanzar ningun otro atributo (\{A\}+ = \{A\} y \{F\}+ = \{F\}).
 
-	\item Calcula \textbf{{B}+}, ¿qué puedes decir de esta cerradura? 
-	
-	La cerradura es \{B\}+ = \{BDECA\} y alcanza a casi todos los atributos de R excepto de F por lo cual no es una llave. 
-	
-	\item Obtén todas las \textbf{llaves candidatas}. 
-	
+	\item Calcula \textbf{{B}+}, ¿qué puedes decir de esta cerradura?
+
+	La cerradura es \{B\}+ = \{BDECA\} y alcanza a casi todos los atributos de R excepto de F por lo cual no es una llave.
+
+	\item Obtén todas las \textbf{llaves candidatas}.
+
 	La unica que cumple con la definición de llave candidata seria \textbf{BF} por el análisis que hicimos en el inciso anterior
-	
+
 	\item ¿R cumple con \textbf{BCNF}? ¿Cumple con \textbf{3NF}? (en caso contrario normaliza)
-	
+
 	Empezaremos con BCNF, podemos observar que todas las dependencias son violaciones por lo tanto eligiremos la violacion:  \textbf{CD $\rightarrow$ A};
 	por lo tanto obtebdriamos las relaciones S(C,D,A) con la unica dependencia CD $\rightarrow$ A y T(C,D,B,E,F) con las dependencias BD $\rightarrow$ E, E $\rightarrow$ C y B$\rightarrow$ C.
-	
+
 	Ya que la relación S esta en BCNF , pero en T siguen presentandose violaciones ya que ninguna tiene una superllave, asi que seguimos con el proceso ahora tomandonos:
-	
+
 	\textbf{E$\rightarrow$ C};
 	por lo tanto obtendriamos las relaciones U(E,C) con la unica dependencia E $\rightarrow	$ C y V(E,D,B,F) con dependencias BD $\rightarrow$ E y B $\rightarrow$ D .
-	
+
 	Ya que la relación U ya esta en BCNF, pero V no tiene del lado izquierdo una superllave , asi que sus dos dependencias faltantes siguen siendo violaciones, asi que seguimos con el procso ahora tomandonos:
-	
-	\textbf{BD $\rightarrow$ E};	
+
+	\textbf{BD $\rightarrow$ E};
 	por lo tanto obtendriamos las relaciones W(B,D,E) con dependencias BD $\rightarrow$ E y B$\rightarrow$ D y X(B,D,F) con la unica dependencia B$\rightarrow$ D.
-	
+
 	Ya que la relación W ya esta en BCNF, pero en X tiene otra superllave que es BF lo cual nos lleva a que su dependencia sigue siendo una violación, por lo que continuamos con el proceso y nos tomamos esta ultima violación:
-	
+
 	\textbf{B $\rightarrow$ D};
 	por lo que al final tendriamos las relaciones Y(B,D) y Z(B,F) que ambas ya estan en BCNF terminando la Normalización.
 	\\\\
@@ -272,10 +272,10 @@ Sus Cerraduras solo se contienen a ellas mismas , por lo que no pueden alcanzar 
       cerradura, concluimos que no es superfluo.
   \end{itemize}
   Así, nuestro conjunto de dependencias funcionales mínimo
-  es 
-  
+  es
+
     $F_{\{MIN\}}$ = \{B $\rightarrow$ ED, CD $\rightarrow$ A, E $\rightarrow$ C\}.
-  
+
   Por lo que hacemos una nueva relación para cada dependencia
   funcional, y como en ninguna de ellas aparece una llave candidata
    añadimos una relación
@@ -290,8 +290,8 @@ Sus Cerraduras solo se contienen a ellas mismas , por lo que no pueden alcanzar 
 
     \item $V(B, F)$ con la dependencia funcional $BF \to BF$.
   \end{itemize}
-	\item Se ha decidido dividir \textbf{R} en las siguientes relaciones \textbf{S(A,B,C,D,F)} y \textbf{T(C,E)}, ¿se puede recuperar la información de \textbf{R}? 
-	
+	\item Se ha decidido dividir \textbf{R} en las siguientes relaciones \textbf{S(A,B,C,D,F)} y \textbf{T(C,E)}, ¿se puede recuperar la información de \textbf{R}?
+
 	 No, porque se pierderia la dependencia \textbf{BD $\rightarrow$ E}.
 
 \end{enumerate}
@@ -301,33 +301,55 @@ Sus Cerraduras solo se contienen a ellas mismas , por lo que no pueden alcanzar 
 	\item R(A,B,C,D,E)con DMV = { A $\twoheadrightarrow$B, AB $\rightarrow$ C, A $\rightarrow$ D, AB $\rightarrow$ E}\\
 \end{enumerate}
 \begin{itemize}
-	\item Encuentra todas las violaciones a la 4NF.
-	\{AB\}+=\{ABCDE\} es una llave. Las violaciones son \{A$\twoheadrightarrow$B\}.\\
+	\item Encuentra todas las violaciones a la 4NF.\\
+        \begin{itemize}
+        \item[a.]\{AB\}+=\{ABCD\} es una llave y no hay violaciones
+        \item[b.]\{AB\}+=\{ABCDE\} es una llave. Las violaciones son
+            \{A$\twoheadrightarrow$B\}.\\
+        \end{itemize}
 	\item Normaliza de acuerdo a la 4NF.\\
-	Tomamos la violación A$\twoheadrightarrow$B.\\
-	Obtenemos las relaciones S(A,B) con DMV=\{A$\twoheadrightarrow$B\} y
-	T(A,C,D,E) con DMV=\{A$\rightarrow$\}.\\
-	\{ACE\}+=\{ACED\} es una llave para T, entonces tomamos la violación
-	A$\rightarrow$D.\\
-	Obtenemos las relaciones U(A,D) con DMV=\{A$\rightarrow$\} y V(A,C,E) con
-	DMV=\{ACE$\rightarrow$\}.\\
-	Por lo tanto, el esquema en 4NF es S(A,B), U(A,D) y V(A,C,E).
-	
+    \begin{itemize}
+        \item[a.] Dividimos la relación en dos esquemas:\\
+            U(A,B,C) y V(B,D).\\
+            Ambos esquemas ya están en 4NF.
+        \item[b.] Tomamos la violación A$\twoheadrightarrow$B.\\
+            Obtenemos las relaciones S(A,B) con DMV=\{A$\twoheadrightarrow$B\} y
+            T(A,C,D,E) con DMV=\{A$\rightarrow$\}.\\
+            \{ACE\}+=\{ACED\} es una llave para T, entonces tomamos la violación
+            A$\rightarrow$D.\\
+            Obtenemos las relaciones U(A,D) con DMV=\{A$\rightarrow$\} y
+            V(A,C,E) con DMV=\{ACE$\rightarrow$\}.\\
+            Por lo tanto, el esquema en 4NF es S(A,B), U(A,D) y V(A,C,E).
+    \end{itemize}
 \end{itemize}
 
-	\item Se tiene la siguiente relación: 
-	$$\textbf{R(idEnfermo, idCirujano, fechaCirugía, nombreEnfermo, direcciónEnfermo, nombreCirujano, nombreCirugía, medicinaSuministrada, efectosSecundarios)}$$
-	\begin{itemize}
-		\item Expresa las siguientes restricciones en forma de \textbf{dependencias funcionales}: 
-		\begin{enumerate}
-		\item A un enfermo sólo se le da una medicina después de la operación.
-		
-		\textbf{R:} $idEnfermo,fechaCirugia,nombreCirugia \rightarrow medicinaSuministrada$
+\item Se tiene la siguiente relación:\\
+    \textbf{R(idEnfermo, idCirujano, fechaCirugía, nombreEnfermo,
+        direcciónEnfermo, nombreCirujano, nombreCirugía, medicinaSuministrada,
+        efectosSecundarios)}
+    \begin{itemize}
+        \item Expresa las siguientes restricciones en forma de dependencias
+            funcionales:
+            A un enfermo sólo se le da una medicina después de la operación.
+            Si existen efectos secundarios estos dependen sólo de la medicina
+            suministrada. Sólo puede existir un efecto secundario por
+            medicamento.\\
+            	\textbf{R:} $medicinaSuministrada \rightarrow efectosSecundarios$
+            F=\{idEnfermo nombreCirugía $\rightarrow$ medicinaSuministrada,\\
+                medicinaSuministrada $\rightarrow$ efectosSecundarios,\\
+                efectosSecundarios $\rightarrow$ medicinaSuministrada\}
+        \item Especifica otras dependencias funcionales o multivaluadas que
+            deban satisfacerse en la relación R. Por cada una que definas,
+            deberá aparecer un enunciado en español como en el inciso anterior.
+            Un cirujano atiende a un enfermo y le receta una medicina en una
+            cierta fecha.\\
+            Un enfermo tiene un nombre y una direcicón.\\
+            F'=F$\cup$\{idCirujano $\rightarrow$ idEnfermo medicinaSuministrada,
+                            fechaCirugía,\\
+                        idEnfermo $\rightarrow$ nombreEnfermo direcciónEnfermo\}
 
-		\item Si existen efectos secundarios estos dependen sólo de la medicina suministrada. Sólo puede existir un efecto secundario por medicamento. 
-		
-		\textbf{R:} $medicinaSuministrada \rightarrow efectosSecundarios$
-		\end{enumerate}
+		\item Si existen efectos secundarios estos dependen sólo de la medicina suministrada. Sólo puede existir un efecto secundario por medicamento.
+
 	\end{itemize}
 \end{enumerate}
 
