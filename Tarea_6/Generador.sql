@@ -131,7 +131,7 @@ CREATE TABLE Colaborar (
 );
 
 CREATE TABLE Supervisar (
-    CURPSupervidado nchar(18) UNIQUE NOT NULL,
+  CURPSupervisado nchar(18) UNIQUE NOT NULL,
   CURPSupervisor nchar(18) NOT NULL,
   PRIMARY KEY (CURPSupervidado)
 );
@@ -141,10 +141,11 @@ CREATE TABLE Empresa (
   razonSocial nvarchar(255) NULL,
   calle nvarchar(255) NOT NULL,
   num int NOT NULL,
-  CP nvarchar(5) NOT NULL,
+  ciudad nvarchar(255) NOT NULL,
+  CPE nvarchar(5) NOT NULL,
   PRIMARY KEY (RFC),
-  CONSTRAINT CP
-  CHECK (CP LIKE '[0-9][0-9][0-9][0-9][0-9]')
+  CONSTRAINT CPE
+  CHECK (CPE LIKE '[0-9][0-9][0-9][0-9][0-9]')
 );
 
 CREATE TABLE Proyecto (
