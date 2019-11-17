@@ -46,7 +46,7 @@ insert into Trabajar (CURP, RFC, salarioQuincenal, fechaIngreso) values ('ARSM20
 insert into Trabajar (CURP, RFC, salarioQuincenal, fechaIngreso) values ('ARVF19860104FKLIE9', 'Z5Y6KURKE5OTG', 34716, '12/10/2008');
 insert into Trabajar (CURP, RFC, salarioQuincenal, fechaIngreso) values ('ASLS19820314FNHII6', 'SCPEDLLEOBHEQ', 42792, '12/19/2008');
 insert into Trabajar (CURP, RFC, salarioQuincenal, fechaIngreso) values ('AUBG19990330FYROL8', 'CMPP73TMB8OHI', 22373, '04/30/2002');
-insert into Trabajar (CURP, RFC, salarioQuincenal, fechaIngreso) values ('AUJS19870116FXGAH2', 'UV2OLYADR5I5R', 42365, '03/05/2005');
+insert into Trabajar (CURP, RFC, salarioQuincenal, fechaIngreso) values ('AUJS19870116FXGAH2', 'UV2OLYADR5I5R', 42367, '03/05/2005');
 insert into Trabajar (CURP, RFC, salarioQuincenal, fechaIngreso) values ('AUME19830307MBBAD2', 'NCWEQOHK7WPAN', 37389, '01/27/2009');
 insert into Trabajar (CURP, RFC, salarioQuincenal, fechaIngreso) values ('AUPM19880116MVBYA7', '4W9BOLQPZPP0T', 43097, '11/11/2013');
 insert into Trabajar (CURP, RFC, salarioQuincenal, fechaIngreso) values ('AURL19961006FVDOI5', 'W14MHRWLELLQG', 36961, '11/10/2004');
@@ -354,7 +354,7 @@ insert into Trabajar (CURP, RFC, salarioQuincenal, fechaIngreso) values ('MECA19
 insert into Trabajar (CURP, RFC, salarioQuincenal, fechaIngreso) values ('MEEP19851025FLGMA6', 'H1QXW6YVZ1VCD', 33321, '01/05/2008');
 insert into Trabajar (CURP, RFC, salarioQuincenal, fechaIngreso) values ('MEMM20000629FSAAI1', '9IY56JXTKC71F', 21590, '11/11/2008');
 insert into Trabajar (CURP, RFC, salarioQuincenal, fechaIngreso) values ('MENP19831116FDGEH2', 'H1QXW6YVZ1VCD', 43508, '06/05/2017');
-insert into Trabajar (CURP, RFC, salarioQuincenal, fechaIngreso) values ('MESM19840207FPLAA2', 'ZCL3CG3P38RBN', 44194, '11/02/2003');
+insert into Trabajar (CURP, RFC, salarioQuincenal, fechaIngreso) values ('MESM19840207FPLAA2', 'ZCL3CG3P38RBN', 44195, '11/02/2003');
 insert into Trabajar (CURP, RFC, salarioQuincenal, fechaIngreso) values ('MEST19870522FCREI9', 'QIDV5OT2WTGYB', 40115, '01/20/2006');
 insert into Trabajar (CURP, RFC, salarioQuincenal, fechaIngreso) values ('METC19930713MVNOH3', '481L6PL6ULAVQ', 40414, '10/11/2009');
 insert into Trabajar (CURP, RFC, salarioQuincenal, fechaIngreso) values ('MIAB19850714MACRE6', 'Y85GN1I536OJI', 43233, '02/08/2016');
