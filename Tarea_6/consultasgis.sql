@@ -10,17 +10,20 @@ ON e.CURP = em.CURP
 WHERE e.ciudad = em.ciudad
 
 --consulta f
+SELECT em.razonSocial compañia, DATEPART(yyyy, t.fechaIngreso) año,
+        DATEPART(q, t.fechaIngreso) trimestre, genero, COUNT(e.CURP) empleados
+FROM (Empleado e JOIN Trabajar t ON t.CURP = e.CURP) JOIN
+     Empresa em ON t.RFC = em.RFC
+    GROUP BY em.razonSocial, DATEPART(yyyy, t.fechaIngreso),
+            DATEPART(q, t.fechaIngreso), e.genero;
 
-SELECT t1.RFC, DATENAME(YEAR, t1.fechaIngreso) as Año, e.genero, t2.salarioPromedio
-FROM Empleado as e
-JOIN Trabajar as t1 ON t1.CURP = e.CURP
-JOIN (
-SELECT t.RFC, AVG(salarioQuincenal) as salarioPromedio
-FROM Trabajar as t
-GROUP BY t.RFC) as t2
-ON t2.RFC = t1.RFC
 --consulta j
-
+SELECT em.razonSocial compañia, DATEPART(yyyy, t.fechaIngreso) año,
+      DATEPART(q, t.fechaIngreso) trimestre, genero, COUNT(e.CURP) empleados
+FROM (Empleado e JOIN Trabajar t ON t.CURP = e.CURP)
+JOIN Empresa em ON t.RFC = em.RFC
+GROUP BY em.razonSocial, DATEPART(yyyy, t.fechaIngreso),
+         DATEPART(q, t.fechaIngreso), e.genero;
 
 --consulta n
 SELECT d.CURP, c.numProyecto, p.nombreProyecto, p.fechaInicio, p.fechaFin, p.RFCEmpresa
