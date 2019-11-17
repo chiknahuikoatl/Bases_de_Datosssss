@@ -132,7 +132,7 @@ CREATE TABLE Colaborar (
 CREATE TABLE Supervisar (
   CURPSupervisado nchar(18) UNIQUE NOT NULL,
   CURPSupervisor nchar(18) NOT NULL,
-  PRIMARY KEY (CURPSupervidado)
+  PRIMARY KEY (CURPSupervisado)
 );
 
 CREATE TABLE Empresa (
@@ -140,6 +140,7 @@ CREATE TABLE Empresa (
   razonSocial nvarchar(255) NULL,
   calle nvarchar(255) NOT NULL,
   num int NOT NULL,
+  ciudad nvarchar(255) NOT NULL,
   CPE nvarchar(5) NOT NULL,
   PRIMARY KEY (RFC),
   CONSTRAINT CPE
