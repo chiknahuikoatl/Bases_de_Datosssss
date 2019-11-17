@@ -8,14 +8,11 @@ SELECT nombre, ciudad
 -- f. Obtener una lista de cada compañía y el salario promedio que paga. La
 --  información se debe mostrar por compañía, año, y género.
 
-SELECT empresa, CASE genero
-                    WHEN genero = 'M' THEN 'Masc',
-                    ELSE 'Fem'
-                  END AS Género,
-        año
+SELECT em.razonSocial empresa, genero, DATEPART(y, t.fechaIngreso),
+        AVG(t.salarioQuincenal)
     FROM (Empleado e JOIN Trabajar t ON t.CURP = e.CURP) JOIN
             Empresa em ON t.RFC = em.RFC
-    GROUP BY em.razonSocial, AVG(t.salarioQuincenal), YEAR(t.fechaIngreso);
+    GROUP BY em.razonSocial, genero, YEAR(t.fechaIngreso);
 
 
 -- j. Encontrar la cantidad de empleados en cada compañía, por año, trimestre y
@@ -37,8 +34,11 @@ SELECT p.numProyecto, p.nombreProyecto, p.fechaInicio, p.fechaFin, p.RFCEmpresa
 -- r. Encontrar la información de las compañías que tienen al menos dos
 --  empleados en la misma ciudad en que tienen sus instalaciones.
 
-SELECT
-    FROM 
-    WHERE
+SELECT m.RFC, m.razonSocial, m.ciudad, m.calle, m.num, m.CP
+    FROM (Empleado e INNER JOIN Trabajar t ON e.CURP = t.CURP) INNER JOIN
+            Empresa m ON t.RFC = t.RFC
+    GROUP BY e.Ciudad
+    HAVING COUNT(e.Ciudad > 1)
+
 
 --v
