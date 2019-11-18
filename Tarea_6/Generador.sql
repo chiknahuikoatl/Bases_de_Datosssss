@@ -1,3 +1,11 @@
+--DROP TABLE Empleado;
+--DROP TABLE Dirigir;
+--DROP TABLE Trabajar;
+--DROP TABLE Colaborar;
+--DROP TABLE Supervisar;
+--DROP TABLE Empresa;
+--DROP TABLE Proyecto;
+
 --Seleccionamos master para creación de base
 USE master;
 
