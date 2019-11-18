@@ -1,6 +1,6 @@
 insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('PRUEBA1234567', 'PEMEX', 'Crowley', 4257, 'Qandahar', 21948);
 insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('6SU71PCZJ5DYS', 'Gladstone Investment Corporation', 'Everett', 7, 'South Hill', 59571);
-insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('QB4VT6KBYQF7K', 'EPAM Systems, Inc.', 'Eagan', 9, 'Almirante Brown', 56730);
+insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('QB4VT6KBYQF7K', 'EPAMT Systems, Inc.', 'Eagan', 9, 'Almirante Brown', 56730);
 insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('8I2HFO0MDD1Z2', 'Progressive Corporation (The)', '4th', 27, 'La Matanza', 84833);
 insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('BBA264L3FCDJH', 'First Trust Low Beta Income ETF', 'Spenser', 6, 'Sidi Bel Abbès', 30096);
 insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('U618DJTEYORMT', 'EPAM Systems, Inc.', 'Almo', 3, 'Ech-Chleff (el-Asnam)', 54164);
@@ -21,7 +21,7 @@ insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('E4MSDEB
 insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('V0QBCMAPL0D44', 'TEGNA Inc.', 'Rutledge', 2945, 'Annaba', 90688);
 insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('S1DVL53737RVS', 'The Dixie Group, Inc.', 'Hollow Ridge', 16, 'Qandahar', 79109);
 insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('CZZNITUJF6ZUJ', 'PowerShares DWA Healthcare Momentum Portfolio', 'Golf', 7574, 'Herat', 59891);
-insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('JGK9BKOUNOC77', 'DTE Energy Company', 'Vidon', 6, 'Namibe', 43864);
+insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('JGK9BKOUNOC77', 'DTEM Energy Company', 'Vidon', 6, 'Namibe', 43864);
 insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('ZQAHE01KX41K4', 'Truett-Hurst, Inc.', 'Riverside', 3234, 'Biskra', 13607);
 insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('YEVBGI3FJWWNW', 'Helix Energy Solutions Group, Inc.', 'Calypso', 27671, 'Batna', 62742);
 insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('2CI4G1TOW1C7G', 'Kayne Anderson Acquisition Corp.', 'Declaration', 81494, 'The Valley', 52993);
@@ -52,7 +52,7 @@ insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('XJG0IAK
 insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('51MF1GF89GLDA', 'Green Plains Partners LP', 'Roth', 9, 'Skikda', 91966);
 insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('HA4758269KKAC', 'Invesco Bond Fund', 'Menomonie', 58, 'Ezeiza', 26649);
 insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('V19RP8YNGM863', 'Norwegian Cruise Line Holdings Ltd.', 'Columbus', 1, 'José C. Paz', 59381);
-insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('RLGJWTAM70PZG', 'Gulf Resources, Inc.', 'Hagan', 3, 'Mostaganem', 80788);
+insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('RLGJWTAM70PZG', 'GulfS Resources, Inc.', 'Hagan', 3, 'Mostaganem', 80788);
 insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('HST4PDNYGFICK', 'First Horizon National Corporation', 'Derek', 3, 'Mostaganem', 43464);
 insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('C06H1EBK469EY', 'Principal Real Estate Income Fund', 'Hansons', 6550, 'Tébessa', 37447);
 insert into Empresa (RFC, razonSocial, calle, num, ciudad, CPE) values ('OC7BSA26HC6I8', 'Newell Brands Inc.', '3rd', 6, 'Saint John´s', 10068);
