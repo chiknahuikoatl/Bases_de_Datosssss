@@ -1760,3 +1760,8 @@ insert into Proyecto (numProyecto, nombreProyecto, fechaInicio, fechaFin, RFCEmp
 insert into Proyecto (numProyecto, nombreProyecto, fechaInicio, fechaFin, RFCEmpresa) values (48, '17C3I', '10/16/2007', '09/05/2019', 'E89X8IVBPOMNU');
 insert into Proyecto (numProyecto, nombreProyecto, fechaInicio, fechaFin, RFCEmpresa) values (49, '8PHXG', '03/19/2011', '12/06/2018', '3W97LSW9P09CY');
 insert into Proyecto (numProyecto, nombreProyecto, fechaInicio, fechaFin, RFCEmpresa) values (50, 'XNSN9', '05/21/2016', '08/30/2019', 'KJ97APV9PPIAA');
+insert into Empleado (nombre, apellidoPaterno, apellidoMaterno, genero, nacimiento, calle, num, ciudad, CP, CURP) values ('Carlos', 'Hernandez', 'Ballarta', 'M', '02/08/1924', 'Milwaukee', '0', 'Herat', 59774, 'HEBC19240208MHTNY4');
+insert into Dirigir (CURP, RFC, fechaInicio) values ('HEBC19240208MHTNY4', 'PRUEBA1234567', '02/26/1950');
+insert into Empleado (nombre, apellidoPaterno, apellidoMaterno, genero, nacimiento, calle, num, ciudad, CP, CURP) values ('Juana', 'Perez', 'Medina', 'F', '11/20/1985', 'Clarendon', '459', 'CDMX', 47629, 'PEMJ19851120FCCEO6');
+insert into Empleado (nombre, apellidoPaterno, apellidoMaterno, genero, nacimiento, calle, num, ciudad, CP, CURP) values ('Juan', 'Perez', 'Medina', 'M', '11/20/1985', 'Clarendon', '459', 'CDMX', 47629, 'PEMJ19851120MCCEO0');
+insert into Supervisar (CURPSupervisado, CURPSupervisor) values ('PEMJ19851120MCCEO0','PEMJ19851120FCCEO6');

@@ -1,6 +1,7 @@
+use Tarea6
 --a. Encontrar el nombre y la ciudad de todos los empleados que trabajan en
 --  PEMEX.
-SELECT nombre, ciudad
+SELECT nombre, e.ciudad
     FROM (Empleado e JOIN Trabajar t ON t.CURP = e.CURP) JOIN
             Empresa em ON t.RFC = em.RFC
     WHERE em.razonSocial = 'PEMEX';
@@ -21,10 +22,10 @@ SELECT nombre , apellidoPaterno, apellidoMaterno ,salarioQuincenal
 FROM Empleado E JOIN Dirigir D on E.CURP = D.CURP JOIN Trabajar T on T.CURP = E.CURP
 
 --d
-SELECT * FROM Empleados E
+SELECT * FROM Empleado E
 INNER JOIN Dirigir D ON E.CURP = D.CURP
 INNER JOIN Trabajar T ON T.CURP = D.CURP
-INNER JOIN Empresa E ON D.RFC = E.RFC
+INNER JOIN Empresa Em ON D.RFC = Em.RFC
 INNER JOIN Colaborar C ON C.CURP = D.CURP
 INNER JOIN Proyecto P ON C.numProyecto = P.numProyecto
 INNER JOIN Supervisar S ON (S.CURPSupervisor = D.CURP
@@ -79,19 +80,20 @@ GROUP BY em.razonSocial, DATEPART(yyyy, t.fechaIngreso),
 
 -- l
 SELECT nombre, apellidoPaterno, apellidoMaterno, salarioQuincenal, AVG(T.salarioQuincenal) promedio_Salario
-FROM Eempleado E INNER JOIN Trabajar T ON E.CURP = T.CURP
+FROM Empleado E INNER JOIN Trabajar T ON E.CURP = T.CURP
 GROUP BY nombre, apellidoPaterno, apellidoMaterno, salarioQuincenal HAVING T.salarioQuincenal > (SELECT AVG(salarioQuincenal) FROM trabajar)
 
 --m. Encontrar la compañía que tiene menos empleados y listar toda la
 --  información de los mismos.
-SELECT e.CURP, e.nombre, e.apellidoPaterno, e.apellidoMaterno, e.genero,
-        e.nacimiento, e.calle, e.num, e.ciudad, e.CP
-FROM Empleado e INNER JOIN Trabajar t ON t.CURP = e.CURP
+
+SELECT razonSocial ,e.CURP, nombre, apellidoPaterno, apellidoMaterno, genero,
+        nacimiento, e.calle, e.num, e.ciudad, CP
+FROM Empleado e INNER JOIN Trabajar t ON t.CURP = e.CURP JOIN Empresa on t.RFC = Empresa.RFC
 WHERE t.RFC = (SELECT TOP(1) a.RFC
-    FROM (SELECT s.RFC, COUNT(s.CURP) AS c
-            FROM Trabajar s INNER JOIN Empresa m ON c.RFC = m.RFC
-            GROUP BY s.RFC) As a
-    ORDER BY ASC(a.c));
+    FROM (SELECT RFC, COUNT(CURP) AS c
+            FROM Trabajar
+            GROUP BY RFC) As a
+    ORDER BY c ASC);
 
  --consulta n
  SELECT d.CURP, c.numProyecto, p.nombreProyecto, p.fechaInicio, p.fechaFin, p.RFCEmpresa
@@ -116,10 +118,10 @@ INNER JOIN Proyecto P ON C.numProyecto = P.numProyecto
 WHERE C.fechaFin < P.fechaFin;
 
 -- q. Información de los empleados que no colaboran en ningún proyecto.
-SELECT e.CURP, e.nombre, e.apellidoPaterno, e.apellidoMaterno, e.genero,
-        e.nacimiento, e.calle, e.num, e.ciudad, e.CP
-    FROM Empleado e NATURAL JOIN Colaborar c ON e.CURP = c.CURP
-    WHERE c.numProyecto = NULL;
+SELECT CURP, nombre, apellidoPaterno, apellidoMaterno, genero,
+        nacimiento, calle, num, ciudad, CP
+FROM Empleado 
+WHERE CURP NOT IN (SELECT e.CURP FROM Empleado e JOIN Colaborar c ON e.CURP = c.CURP) 
 
 --consulta r
 SELECT e.RFC, e.razonSocial, e.calle, e.num, e.CPE
@@ -146,7 +148,7 @@ WHERE DAY(E.nacimiento) = DAY(T.fechaIngreso) AND MONTH(E.nacimiento) = MONTH(t.
 SELECT s.CURPSupervisor AS CURP_Supervisor, COUNT(e.CURP) AS Supervisados
     FROM (Empleado e INNER JOIN Supervisar s ON e.CURP = s.CURPSupervisado)
         JOIN Empleado f ON s.CURPSupervisor = f.CURP
-    GROUP BY s.CURPSupervisor, COUNT(e.CURP);
+    GROUP BY s.CURPSupervisor;
 
 --consultas v
 SELECT e.CURP,e.nombre, DATEDIFF(YEAR,e.nacimiento, GETDATE()) AS años
