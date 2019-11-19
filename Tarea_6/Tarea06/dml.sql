@@ -33,7 +33,7 @@ INNER JOIN Supervisar S ON (S.CURPSupervisor = D.CURP
 
 -- e. Encontrar a todos los empleados que viven en la misma ciudad y en la misma
 --  calle que su supervisor.
-SELECT e.CURP
+SELECT e.CURP,e.nombre,e.apellidoPaterno,e.apellidoMaterno
     FROM Empleado e INNER JOIN Supervisar s ON e.CURP = s.CURPSupervisado
         INNER JOIN Empleado es ON s.CURPSupervisor = es.CURP
     WHERE (e.CURP != es.CURP) AND (e.ciudad = es.ciudad) AND (e.calle) = es.calle;
@@ -151,10 +151,10 @@ SELECT s.CURPSupervisor AS CURP_Supervisor, COUNT(e.CURP) AS Supervisados
     GROUP BY s.CURPSupervisor;
 
 --consultas v
-SELECT e.CURP,e.nombre, DATEDIFF(YEAR,e.nacimiento, GETDATE()) AS años
+SELECT e.nombre,e.apellidoPaterno,e.apellidoMaterno
 FROM Empleado as e
 JOIN Dirigir as d ON e.CURP = d.CURP
-WHERE DATEDIFF(YEAR,GETDATE(), e.nacimiento) > 50
+WHERE DATEDIFF(YEAR,e.nacimiento, GETDATE()) > 50
 
 --W
 SELECT nombre , apellidoPaterno , apellidoMaterno
