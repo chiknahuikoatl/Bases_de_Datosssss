@@ -80,3 +80,7 @@ CREATE TABLE Proyecto (
   RFCEmpresa nvarchar(13),
   PRIMARY KEY (numProyecto)
 );
+
+
+
+   
