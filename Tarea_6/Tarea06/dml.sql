@@ -80,7 +80,7 @@ GROUP BY em.razonSocial, DATEPART(yyyy, t.fechaIngreso),
 -- l
 SELECT nombre, apellidoPaterno, apellidoMaterno, salarioQuincenal, AVG(T.salarioQuincenal) promedio_Salario
 FROM Empleado E INNER JOIN Trabajar T ON E.CURP = T.CURP
-GROUP BY nombre, apellidoPaterno, apellidoMaterno, salarioQuincenal 
+GROUP BY nombre, apellidoPaterno, apellidoMaterno, salarioQuincenal
 HAVING T.salarioQuincenal > (SELECT AVG(salarioQuincenal) FROM trabajar)
 
 --m. Encontrar la compañía que tiene menos empleados y listar toda la
@@ -112,7 +112,7 @@ WHERE t.RFC = (SELECT TOP(1) a.RFC
  FROM Empleado E JOIN Trabajar T on E.CURP = T.CURP JOIN Empresa Em on Em.RFC = T.RFC)as Cuenta
  GROUP BY razonSocial) as CiudadesEmpresa ON TotalCiudad.Total = CiudadesEmpresa.TotalCiudades
 
---p 
+--p
 SELECT E.CURP, E.nombre, E.apellidoPaterno, E.apellidoMaterno
     FROM Empleado E INNER JOIN Colaborar C ON E.CURP = C.CURP
         INNER JOIN Proyecto P ON C.numProyecto = P.numProyecto
@@ -121,8 +121,8 @@ SELECT E.CURP, E.nombre, E.apellidoPaterno, E.apellidoMaterno
 -- q. Información de los empleados que no colaboran en ningún proyecto.
 SELECT CURP, nombre, apellidoPaterno, apellidoMaterno, genero,
         nacimiento, calle, num, ciudad, CP
-FROM Empleado 
-WHERE CURP NOT IN (SELECT e.CURP FROM Empleado e JOIN Colaborar c ON e.CURP = c.CURP) 
+FROM Empleado
+WHERE CURP NOT IN (SELECT e.CURP FROM Empleado e JOIN Colaborar c ON e.CURP = c.CURP)
 
 --consulta r
 SELECT e.RFC, e.razonSocial, e.calle, e.num, e.CPE
@@ -149,7 +149,7 @@ WHERE DAY(E.nacimiento) = DAY(T.fechaIngreso) AND MONTH(E.nacimiento) = MONTH(t.
 SELECT s.CURPSupervisor AS CURP_Supervisor, COUNT(e.CURP) AS Supervisados
     FROM (Empleado e INNER JOIN Supervisar s ON e.CURP = s.CURPSupervisado)
         JOIN Empleado f ON s.CURPSupervisor = f.CURP
-    GROUP BY s.CURPSupervisor;
+    GROUP BY s.CURPSupervisor, COUNT(e.CURP);
 
 --consultas v
 SELECT e.nombre,e.apellidoPaterno,e.apellidoMaterno
