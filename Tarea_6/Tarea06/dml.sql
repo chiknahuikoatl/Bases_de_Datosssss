@@ -23,7 +23,7 @@ FROM Empleado E JOIN Dirigir D on E.CURP = D.CURP JOIN Trabajar T on T.CURP = E.
 
 --d
 SELECT E.CURP, E.nombre, E.apellidoPaterno, E.apellidoMaterno, E.genero,
-        E.nacimiento, E.calle, E.num, E.ciudad, E.CP
+        E.nacimiento, E.calle, E.num, E.ciudad, E.CP,D.fechaInicio
     FROM (Empleado E INNER JOIN Dirigir D ON E.CURP = D.CURP) INNER JOIN
         Empresa Em ON D.RFC = Em.RFC
     WHERE DATEPART(yyyy, D.fechaInicio) = 2018 AND
@@ -58,6 +58,7 @@ GROUP BY razonSocial;
 --  proyectos. Interesan aquellos empleados que colaboran en al menos dos
 --  proyectos y en donde el número de horas que dediquen a algún proyecto sea
 --  mayor a 20.
+
 -- SELECT e.CURP, e.nombre, e.apellidoPaterno, e.apellidoMaterno
 -- FROM Empleado e INNER JOIN Colaborar c ON e.CURP = c.CURP
 -- WHERE DATEPART(hh, c.numHoras) > 20;
@@ -79,7 +80,8 @@ GROUP BY em.razonSocial, DATEPART(yyyy, t.fechaIngreso),
 -- l
 SELECT nombre, apellidoPaterno, apellidoMaterno, salarioQuincenal, AVG(T.salarioQuincenal) promedio_Salario
 FROM Empleado E INNER JOIN Trabajar T ON E.CURP = T.CURP
-GROUP BY nombre, apellidoPaterno, apellidoMaterno, salarioQuincenal HAVING T.salarioQuincenal > (SELECT AVG(salarioQuincenal) FROM trabajar)
+GROUP BY nombre, apellidoPaterno, apellidoMaterno, salarioQuincenal
+HAVING T.salarioQuincenal > (SELECT AVG(salarioQuincenal) FROM trabajar)
 
 --m. Encontrar la compañía que tiene menos empleados y listar toda la
 --  información de los mismos.
@@ -139,7 +141,7 @@ GROUP BY nombreProyecto ORDER BY Colaboradores desc) as tempnew on PR.nombreProy
 on C.numProyecto = PR.numProyecto JOIN Empleado E on E.CURP = C.CURP
 
 --t
-SELECT E.CURP FROM Empleado E INNER JOIN Trabajar T ON E.CURP = T.CURP
+SELECT E.CURP, E.nombre , E.apellidoPaterno , E.apellidoMaterno FROM Empleado E INNER JOIN Trabajar T ON E.CURP = T.CURP
 WHERE DAY(E.nacimiento) = DAY(T.fechaIngreso) AND MONTH(E.nacimiento) = MONTH(t.fechaIngreso);
 
 
