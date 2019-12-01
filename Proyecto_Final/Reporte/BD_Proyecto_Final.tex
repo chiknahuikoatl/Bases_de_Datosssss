@@ -1,0 +1,151 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[left=2.5cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{bussproofs}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{ifsym}
+\usepackage{float}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+\pagestyle{fancy}
+\lhead{Almeida, Figueroa, Ibarra \& Sánchez}
+\rhead{Proyecto Final Bases de Datos}
+
+\begin{document}
+\begin{titlepage}
+    \centering
+    {\scshape\Huge Universidad Nacional Autónoma de México \par}
+    \vspace{1.25cm}
+    {\scshape\huge Fundamentos de Bases de Datos\par}
+    \vspace{1.25cm}
+    {\huge\bfseries Proyecto Final\par}
+    \vspace{1.25cm}
+    {\Large\textsc Almeida Rodríguez Jerónimo\par}
+    \vspace{.1cm}
+    {\large\texttt{418003815}\par}
+    \vspace{0.25cm}
+    {\Large\textsc Figueroa Sandoval Gerardo Emiliano\par}
+    \vspace{.1cm}
+    {\large\texttt{315241774}\par}
+    \vspace{0.25cm}
+    {\Large\textsc Ibarra Moreno Gisselle \par}
+    \vspace{.1cm}
+    {\large\texttt{315602193}\par}
+    \vspace{0.25cm}
+    {\Large\textsc Sánchez Lara Luis Enrique \par}
+    \vspace{.1cm}
+    {\large\texttt{418002856}\par}
+    \vspace{1.5cm}
+    \vfill
+    \begin{figure}[hb!]
+        \includegraphics[width=.3\textwidth]
+            {../../logos/escudo_f-ciencias.png}\hfill
+        \includegraphics[width=.3\textwidth]
+            {../../logos/Escudo_UNAM.png}\hfill
+    \end{figure}
+\end{titlepage}
+\section*{Relaciones funcionales}
+Parrilero(CURP, RFC, idSucursal, nombre, apellidoP, apellidoM, edad,
+    tipoSangre, fechaInicio, numSeguridad, nomina)\\
+
+Mesero(CURP, RFC, idSucursal, nombre, apellidoP, apellidoM, edad,
+    tipoSangre, fechaInicio, numSeguridad, nomina)\\
+
+Taquero(CURP, RFC, idSucursal, nombre, apellidoP, apellidoM, edad,
+    tipoSangre, fechaInicio, numSeguridad, nomina)\\
+
+Cajero(CURP, RFC, idSucursal, nombre, apellidoP, apellidoM, edad,
+    tipoSangre, fechaInicio, numSeguridad, nomina)\\
+
+Repartidor(CURP, RFC, idSucursal, nombre, apellidoP, apellidoM, edad,
+    tipoSangre, fechaInicio, numSeguridad, nomina, numlic, transporte)\\
+
+Sucursal(idSucursal, estado, calle, avenida, numExt, cp)\\
+
+BonoCajero(CURP, numBono)\\
+
+BonoParrillero(CURP, numBono)\\
+
+BonoMesero(CURP, numBono)\\
+
+BonoTaquero(CURP, numBono)\\
+
+BonoRepartidor(CURP, numBono)\\
+
+ProductoPerecedor(idProducto, nombreProducto, precio, marca, fechaCaducidad)\\
+
+ProductoNoPerecedor(idProducto, nombreProducto, precio, marca)\\
+
+Proveedor(idProveedor, nombreProveedor)\\
+
+SolicitarPrP(idSucursal, idProducto, cantidaProducto, fechaCompra)\\
+
+SolicitarPrNP(idSucursal, idProducto, cantidaProducto, fechaCompra)\\
+
+ClienteDefault(idCliente)\\
+
+ClienteE(idCliente, nombre, calle, avenida, numExt, cp)\\
+
+SurtirPrP(idProducto, idProveedor)\\
+
+SurtirPrNP(idProducto, idProveedor)\\
+
+Pertenecer(idCliente, idSucursal)\\
+
+PedidoPersonalE(numPedido, idCliente, idP, fechaPedido, formaPago)\\
+
+PedidoPersonalD(numPedido, idCliente, fechaPedido, formaPago)\\
+
+PedidoDomicilioE(numPedido, idP, idCliente, fechaPedido, formaPago, CURP)\\
+
+PedidoDomicilioD(numPedido, idP, idCliente, fechaPedido, formaPago, CURP)\\
+
+TaqueroCorazon(idP, idCliente)\\
+
+Platillo(idPlatillo, nombrePlatillo, precioPlatillo)\\
+
+Ingredientes(idPlatillo, ingrediente)\\
+
+Promocion(numPromo, descuento, condiciones, dia)\\
+
+AplicarPromo(numPromo, idPlatillo)\\
+
+OrdenarPersonalE(idPlatillo, numPedido, cantidad)\\
+
+OrdenarPersonalD(idPlatillo, numPedido, cantidad)\\
+
+OrdenarDomicilioE(idPlatillo, numPedido, cantidad)\\
+
+OrdenarDomicilioD(idPlatillo, numPedido, cantidad)\\
+
+Salsa(idSalsa, nombreSalsa, nivelPicante)\\
+
+IngredientesSalsa(idSalsa, ingrediente)\\
+
+Acompanar(idSalsa, idPlatillo)\\
+
+ComprarSalsaD(idCliente, idSalsa, presentacion)\\
+
+ComprarSalsaE(idCliente, idSalsa, presentacion)\\
+
+
+
+
+
+\end{document}
