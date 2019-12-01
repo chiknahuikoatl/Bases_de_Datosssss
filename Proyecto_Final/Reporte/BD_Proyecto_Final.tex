@@ -63,87 +63,130 @@
 \section*{Relaciones funcionales}
 Parrilero(CURP, RFC, idSucursal, nombre, apellidoP, apellidoM, edad,
     tipoSangre, fechaInicio, numSeguridad, nomina)\\
+    \{CURP\}+=\{CURP, RFC, idSucursal, nombre, apellidoP, apellidoM, edad,
+        tipoSangre, fechaInicio, numSeguridad, nomina\}
 
 Mesero(CURP, RFC, idSucursal, nombre, apellidoP, apellidoM, edad,
     tipoSangre, fechaInicio, numSeguridad, nomina)\\
+    \{CURP\}+=\{CURP, RFC, idSucursal, nombre, apellidoP, apellidoM, edad,
+        tipoSangre, fechaInicio, numSeguridad, nomina\}
 
 Taquero(CURP, RFC, idSucursal, nombre, apellidoP, apellidoM, edad,
     tipoSangre, fechaInicio, numSeguridad, nomina)\\
+    \{CURP\}+=\{CURP, RFC, idSucursal, nombre, apellidoP, apellidoM, edad,
+        tipoSangre, fechaInicio, numSeguridad, nomina\}
 
 Cajero(CURP, RFC, idSucursal, nombre, apellidoP, apellidoM, edad,
     tipoSangre, fechaInicio, numSeguridad, nomina)\\
+    \{CURP\}+=\{CURP, RFC, idSucursal, nombre, apellidoP, apellidoM, edad,
+        tipoSangre, fechaInicio, numSeguridad, nomina\}
 
 Repartidor(CURP, RFC, idSucursal, nombre, apellidoP, apellidoM, edad,
     tipoSangre, fechaInicio, numSeguridad, nomina, numlic, transporte)\\
+    \{CURP\}+=\{CURP, RFC, idSucursal, nombre, apellidoP, apellidoM, edad,
+        tipoSangre, fechaInicio, numSeguridad, nomina, numlic, transporte\}
 
 Sucursal(idSucursal, estado, calle, avenida, numExt, cp)\\
+\{idSucursal\}+=\{idSucursal, estado, calle, avenida, numExt, cp\}
 
 BonoCajero(CURP, numBono)\\
+\{numBono\}+=\{CURP, numBono\}
 
 BonoParrillero(CURP, numBono)\\
+\{numBono\}+=\{CURP, numBono\}
 
 BonoMesero(CURP, numBono)\\
+\{numBono\}+=\{CURP, numBono\}
 
 BonoTaquero(CURP, numBono)\\
+\{numBono\}+=\{CURP, numBono\}
 
 BonoRepartidor(CURP, numBono)\\
+\{numBono\}+=\{CURP, numBono\}
 
 ProductoPerecedor(idProducto, nombreProducto, precio, marca, fechaCaducidad)\\
+\{idProducto\}+=\{idProducto, nombreProducto, precio, marca, fechaCaducidad\}
 
 ProductoNoPerecedor(idProducto, nombreProducto, precio, marca)\\
+\{idProducto\}+=\{idProducto, nombreProducto, precio, marca\}
 
 Proveedor(idProveedor, nombreProveedor)\\
+\{idProveedor\}+=\{idProveedor, nombreProveedor\}
 
 SolicitarPrP(idSucursal, idProducto, cantidaProducto, fechaCompra)\\
+\{idSucursal\}+=\{idSucursal, idProducto, cantidaProducto, fechaCompra\}
 
 SolicitarPrNP(idSucursal, idProducto, cantidaProducto, fechaCompra)\\
+\{idSucursal\}+=\{idSucursal, idProducto, cantidaProducto, fechaCompra\}
 
 ClienteDefault(idCliente)\\
+\{idCliente\}+=\{idCliente\}
 
 ClienteE(idCliente, nombre, calle, avenida, numExt, cp)\\
+\{idCliente\}+=\{idCliente, nombre, calle, avenida, numExt, cp\}
 
 SurtirPrP(idProducto, idProveedor)\\
+\{idProducto, idProveedor\}+=\{idProducto, idProveedor\}
 
 SurtirPrNP(idProducto, idProveedor)\\
+\{idProducto, idProveedor\}+=\{idProducto, idProveedor\}
 
 Pertenecer(idCliente, idSucursal)\\
+\{idCliente, idSucursal\}+=\{idCliente, idSucursal\}
 
 PedidoPersonalE(numPedido, idCliente, idP, fechaPedido, formaPago)\\
+\{numPedido\}+=\{numPedido, idCliente, idP, fechaPedido, formaPago\}
 
 PedidoPersonalD(numPedido, idCliente, fechaPedido, formaPago)\\
+\{numPedido\}+=\{numPedido, idCliente, fechaPedido, formaPago\}
 
 PedidoDomicilioE(numPedido, idP, idCliente, fechaPedido, formaPago, CURP)\\
+\{numPedido\}+=\{numPedido, idCliente, idP, fechaPedido, formaPago, CURP\}
 
-PedidoDomicilioD(numPedido, idP, idCliente, fechaPedido, formaPago, CURP)\\
+PedidoDomicilioD(numPedido, idCliente, fechaPedido, formaPago, CURP)\\
+\{numPedido\}+=\{numPedido, idCliente, fechaPedido, formaPago\}
 
 TaqueroCorazon(idP, idCliente)\\
+\{idP\}+=\{idP, idCliente\}
 
 Platillo(idPlatillo, nombrePlatillo, precioPlatillo)\\
+\{idPlatillo\}+=\{idPlatillo, nombrePlatillo, precioPlatillo\}
 
 Ingredientes(idPlatillo, ingrediente)\\
+\{idPlatillo, ingrediente\}+=\{idPlatillo, ingrediente\}
 
 Promocion(numPromo, descuento, condiciones, dia)\\
+\{numPromo\}+=\{numPromo, descuento, condiciones, dia\}
 
 AplicarPromo(numPromo, idPlatillo)\\
+\{numPromo\}+=\{numPromo, idPlatillo\}
 
 OrdenarPersonalE(idPlatillo, numPedido, cantidad)\\
+\{idPlatillo, numPedido\}+=\{idPlatillo, numPedido, cantidad\}
 
 OrdenarPersonalD(idPlatillo, numPedido, cantidad)\\
+\{idPlatillo, numPedido\}+=\{idPlatillo, numPedido, cantidad\}
 
 OrdenarDomicilioE(idPlatillo, numPedido, cantidad)\\
+\{idPlatillo, numPedido\}+=\{idPlatillo, numPedido, cantidad\}
 
 OrdenarDomicilioD(idPlatillo, numPedido, cantidad)\\
+\{idPlatillo, numPedido\}+=\{idPlatillo, numPedido, cantidad\}
 
 Salsa(idSalsa, nombreSalsa, nivelPicante)\\
+\{idSalsa\}+=\{idSalsa, nombreSalsa, nivelPicante\}
 
 IngredientesSalsa(idSalsa, ingrediente)\\
+\{idSalsa, ingrediente\}+=\{idSalsa, ingrediente\}
 
 Acompanar(idSalsa, idPlatillo)\\
+\{idSalsa, idPlatillo\}+=\{idSalsa, idPlatillo\}
 
 ComprarSalsaD(idCliente, idSalsa, presentacion)\\
+\{idCliente\}+=\{idCliente, idSalsa, presentacion\}
 
 ComprarSalsaE(idCliente, idSalsa, presentacion)\\
-
+\{idCliente\}+=\{idCliente, idSalsa, presentacion\}
 
 
 
