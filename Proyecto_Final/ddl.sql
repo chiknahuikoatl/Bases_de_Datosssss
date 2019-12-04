@@ -1,42 +1,42 @@
 USE master;
 
---IF EXISTS (SELECT 1 FROM sys.databases WHERE [name] = 'Taqueria')
---BEGIN
---	DROP DATABASE [Taqueria];
---END;
---GO
+IF EXISTS (SELECT 1 FROM sys.databases WHERE [name] = 'Taqueria')
+BEGIN
+	DROP DATABASE [Taqueria];
+END;
+GO
 
---CREATE DATABASE [Taqueria]
---ON PRIMARY
---(
---NAME = 'Taqueria',
---FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL14.EMILIANOFS\MSSQL\DATA\Taqueria.mdf',
---SIZE = 10MB,
---MAXSIZE = UNLIMITED,
---FILEGROWTH = 50 %
---)
---LOG ON
---(
---NAME = 'Taqueria_Log',
---FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL14.EMILIANOFS\MSSQL\DATA\Taqueria_Log.ldf',
---SIZE = 2MB,
---MAXSIZE = 100MB,
---FILEGROWTH = 2MB
---);
---GO
+CREATE DATABASE [Taqueria]
+ON PRIMARY
+(
+NAME = 'Taqueria',
+FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL14.EMILIANOFS\MSSQL\DATA\Taqueria.mdf',
+SIZE = 10MB,
+MAXSIZE = UNLIMITED,
+FILEGROWTH = 50 %
+)
+LOG ON
+(
+NAME = 'Taqueria_Log',
+FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL14.EMILIANOFS\MSSQL\DATA\Taqueria_Log.ldf',
+SIZE = 2MB,
+MAXSIZE = 100MB,
+FILEGROWTH = 2MB
+);
+GO
 -- TODAVIA NO SE SI VAMOS A HACER LA BASE ASI , POR LO MIENTRAS PONGO EL QUE CREA LA BASE AQUI
 
-
+USE Taqueria;
 CREATE TABLE Sucursal (
 	idSucursal int UNIQUE NOT NULL,
 	estado nvarchar(255) NOT NULL,
 	calle nvarchar(255) NOT NULL,
 	avenida nvarchar(255) NOT NULL,
 	numExt int NOT NULL,
-	CP nvarchar(5) NOT NULL,
+	CPS nvarchar(5) NOT NULL,
 	PRIMARY KEY (idSucursal),
-	CONSTRAINT CP
-	CHECK (CP LIKE '[0-9][0-9][0-9][0-9][0-9]')
+	CONSTRAINT CPS
+	CHECK (CPS LIKE '[0-9][0-9][0-9][0-9][0-9]')
 );
 
 CREATE TABLE Parrillero (
@@ -47,14 +47,12 @@ CREATE TABLE Parrillero (
 	apellidoP nvarchar(255) NOT NULL,
 	apellidoM nvarchar(255) NOT NULL,
 	edad int NOT NULL,
-	tipoSangre nchar(3) NOT NULL,
+	tipoSangreP nchar(3) NOT NULL,
 	fechaInicio datetime NOT NULL,
 	numSeguridad int NOT NULL,
 	nomina money NOT NULL,
 	PRIMARY KEY (CURP),
 	FOREIGN KEY (idSucursal) REFERENCES Sucursal(idSucursal),
-	CONSTRAINT tipoSangre
-	CHECK (tipoSangre LIKE 'A+,A-,B+,B-,O+,O-,AB+,AB-')
 );
 
 CREATE TABLE Mesero (
@@ -65,15 +63,13 @@ CREATE TABLE Mesero (
 	apellidoP nvarchar(255) NOT NULL,
 	apellidoM nvarchar(255) NOT NULL,
 	edad int NOT NULL,
-	tipoSangre nchar(3) NOT NULL,
+	tipoSangreM nchar(3) NOT NULL,
 	fechaInicio datetime NOT NULL,
 	numSeguridad int NOT NULL,
 	nomina money NOT NULL,
 	PRIMARY KEY (CURP),
 	FOREIGN KEY (idSucursal) REFERENCES Sucursal(idSucursal),
-	CONSTRAINT tipoSangre
-	CHECK (tipoSangre LIKE 'A+,A-,B+,B-,O+,O-,AB+,AB-')
-);
+	
 
 CREATE TABLE Cajero (
 	CURP nchar(18) UNIQUE NOT NULL,
@@ -83,14 +79,12 @@ CREATE TABLE Cajero (
 	apellidoP nvarchar(255) NOT NULL,
 	apellidoM nvarchar(255) NOT NULL,
 	edad int NOT NULL,
-	tipoSangre nchar(3) NOT NULL,
+	tipoSangreC nchar(3) NOT NULL,
 	fechaInicio datetime NOT NULL,
 	numSeguridad int NOT NULL,
 	nomina money NOT NULL,
 	PRIMARY KEY (CURP),
 	FOREIGN KEY (idSucursal) REFERENCES Sucursal(idSucursal),
-	CONSTRAINT tipoSangre
-	CHECK (tipoSangre LIKE 'A+,A-,B+,B-,O+,O-,AB+,AB-')
 );
 
 CREATE TABLE Taquero (
@@ -101,14 +95,13 @@ CREATE TABLE Taquero (
 	apellidoP nvarchar(255) NOT NULL,
 	apellidoM nvarchar(255) NOT NULL,
 	edad int NOT NULL,
-	tipoSangre nchar(3) NOT NULL,
+	tipoSangreT nchar(3) NOT NULL,
 	fechaInicio datetime NOT NULL,
 	numSeguridad int NOT NULL,
 	nomina money NOT NULL,
 	PRIMARY KEY (CURP),
 	FOREIGN KEY (idSucursal) REFERENCES Sucursal(idSucursal),
-	CONSTRAINT tipoSangre
-	CHECK (tipoSangre LIKE 'A+,A-,B+,B-,O+,O-,AB+,AB-')
+	
 );
 
 CREATE TABLE Repartidor (
@@ -119,7 +112,7 @@ CREATE TABLE Repartidor (
 	apellidoP nvarchar(255) NOT NULL,
 	apellidoM nvarchar(255) NOT NULL,
 	edad int NOT NULL,
-	tipoSangre nchar(3) NOT NULL,
+	tipoSangreR nchar(3) NOT NULL,
 	fechaInicio datetime NOT NULL,
 	numSeguridad int NOT NULL,
 	nomina money NOT NULL,
@@ -127,8 +120,7 @@ CREATE TABLE Repartidor (
 	transporte nvarchar(255) NOT NULL, 
 	PRIMARY KEY (CURP),
 	FOREIGN KEY (idSucursal) REFERENCES Sucursal(idSucursal),
-	CONSTRAINT tipoSangre
-	CHECK (tipoSangre LIKE 'A+,A-,B+,B-,O+,O-,AB+,AB-')
+
 );
 
 CREATE TABLE BonoRepartidor (
@@ -254,9 +246,9 @@ CREATE TABLE ClienteE (
 	calle nvarchar(255) NOT NULL,
 	avenida nvarchar(255) NOT NULL,
 	numExt int NOT NULL,
-	CP nvarchar(5) NOT NULL,
-	CONSTRAINT CP
-	CHECK (CP LIKE '[0-9][0-9][0-9][0-9][0-9]'),
+	CPC nvarchar(5) NOT NULL,
+	CONSTRAINT CPC
+	CHECK (CPC  LIKE '[0-9][0-9][0-9][0-9][0-9]'),
 	PRIMARY KEY (IdClienteE)
 );
 
@@ -357,7 +349,7 @@ CREATE TABLE Salsa (
 	PRIMARY KEY (idSalsa)
 );
 
-CREATE TABLE Acompañar (
+CREATE TABLE Acompanar (
 	idSalsa int NOT NULL,
 	idPlatillo int NOT NULL,
 	FOREIGN KEY (idSalsa) REFERENCES Salsa(idSalsa),
