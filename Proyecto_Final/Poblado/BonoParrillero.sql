@@ -1,0 +1,15 @@
+use Taqueria;
+insert into BonoParrillero (CURP,numBono) values ('ISCG19821016FGLLI5', 1);
+insert into BonoParrillero (CURP,numBono) values ('SAFE19841028FEYOL1', 2);
+insert into BonoParrillero (CURP,numBono) values ('FAEK19941212FKNSA4', 3);
+insert into BonoParrillero (CURP,numBono) values ('HERH19941122FHGEA1', 4);
+insert into BonoParrillero (CURP,numBono) values ('NAFL19871025MLIRI2', 5);
+insert into BonoParrillero (CURP,numBono) values ('GIIR19811119FRNNA1', 6);
+insert into BonoParrillero (CURP,numBono) values ('CARD19901219FDSIA9', 7);
+insert into BonoParrillero (CURP,numBono) values ('POAE19871222FETNL4', 8);
+insert into BonoParrillero (CURP,numBono) values ('GRCD19811122MDEAA9', 9);
+insert into BonoParrillero (CURP,numBono) values ('PAGD19881227FDVOO1', 10);
+insert into BonoParrillero (CURP,numBono) values ('GAHF19951117FFNUA3', 12);
+insert into BonoParrillero (CURP,numBono) values ('IZBM19991116FMCRA8', 13);
+insert into BonoParrillero (CURP,numBono) values ('BUAS19931111FSLNA9', 14);
+insert into BonoParrillero (CURP,numBono) values ('KACA19951224MAYOL8', 15);

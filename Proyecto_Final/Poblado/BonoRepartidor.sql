@@ -1,0 +1,15 @@
+use Taqueria;
+insert into BonoRepartidor (CURP,numBono) values ('BUDB20001020FBGUR7', 1);
+insert into BonoRepartidor (CURP,numBono) values ('LOTR19931026MRSOO7', 2);
+insert into BonoRepartidor (CURP,numBono) values ('CHDL19911124MLEUI2', 3);
+insert into BonoRepartidor (CURP,numBono) values ('DEPJ19961026FJNAA1', 4);
+insert into BonoRepartidor (CURP,numBono) values ('MUCI19871124MIIHV7', 5);
+insert into BonoRepartidor (CURP,numBono) values ('STMG19931213FGUOI3', 6);
+insert into BonoRepartidor (CURP,numBono) values ('LEBC19831123FCMER7', 7);
+insert into BonoRepartidor (CURP,numBono) values ('ZUTA19861113FAPHR8', 8);
+insert into BonoRepartidor (CURP,numBono) values ('LEPG19811219MGTRI6', 9);
+insert into BonoRepartidor (CURP,numBono) values ('OBTP19931123FPCRI5', 10);
+insert into BonoRepartidor (CURP,numBono) values ('ADSK19991027MKDHA2', 12);
+insert into BonoRepartidor (CURP,numBono) values ('BESG19921029FGACU2', 13);
+insert into BonoRepartidor (CURP,numBono) values ('SHEA19991023FAADL8', 14);
+insert into BonoRepartidor (CURP,numBono) values ('OLMJ19881115MJYEE9', 15);

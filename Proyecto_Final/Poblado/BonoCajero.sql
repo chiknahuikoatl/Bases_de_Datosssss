@@ -1,0 +1,15 @@
+use Taqueria;
+insert into BonoCajero (CURP,numBono) values ('SCDE19821130FEHAR8', 1);
+insert into BonoCajero (CURP,numBono) values ('EVEL19811121MLEDU9', 2);
+insert into BonoCajero (CURP,numBono) values ('CAPV19861124FVSUI1', 3);
+insert into BonoCajero (CURP,numBono) values ('MOBT19881212MTRAO2', 4);
+insert into BonoCajero (CURP,numBono) values ('DUMD20001118MDFUE8', 5);
+insert into BonoCajero (CURP,numBono) values ('TUWM19801021MMMAE2', 6);
+insert into BonoCajero (CURP,numBono) values ('DECT19991127MTALY8', 7);
+insert into BonoCajero (CURP,numBono) values ('PHCA19921213MAEAS7', 8);
+insert into BonoCajero (CURP,numBono) values ('BRSB19851015FBITA8', 9);
+insert into BonoCajero (CURP,numBono) values ('FLWC20001213FCUAA7', 10);
+insert into BonoCajero (CURP,numBono) values ('ALBR19931227MRTEO3', 12);
+insert into BonoCajero (CURP,numBono) values ('DRHF19861018FFYAI4', 13);
+insert into BonoCajero (CURP,numBono) values ('OGCR19881023MREAU4', 14);
+insert into BonoCajero (CURP,numBono) values ('MOBN19871010FNRRA5', 15);

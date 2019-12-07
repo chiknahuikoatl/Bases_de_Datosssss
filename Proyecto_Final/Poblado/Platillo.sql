@@ -1,0 +1,15 @@
+insert into Platillo (idPlatillo, nombrePlatillo, precioPlatillo) values (1, 'T.Pastor', '$71.36');
+insert into Platillo (idPlatillo, nombrePlatillo, precioPlatillo) values (2, 'T.Suadero', '$107.51');
+insert into Platillo (idPlatillo, nombrePlatillo, precioPlatillo) values (3, 'T.Chorizo', '$72.04');
+insert into Platillo (idPlatillo, nombrePlatillo, precioPlatillo) values (4, 'T.Lengua', '$86.50');
+insert into Platillo (idPlatillo, nombrePlatillo, precioPlatillo) values (5, 'T.Pancita', '$112.12');
+insert into Platillo (idPlatillo, nombrePlatillo, precioPlatillo) values (6, 'Gringa', '$96.89');
+insert into Platillo (idPlatillo, nombrePlatillo, precioPlatillo) values (7, 'Alambre', '$125.12');
+insert into Platillo (idPlatillo, nombrePlatillo, precioPlatillo) values (8, 'Torta de Pastor', '$33.14');
+insert into Platillo (idPlatillo, nombrePlatillo, precioPlatillo) values (9, 'T.Cabeza', '$23.41');
+insert into Platillo (idPlatillo, nombrePlatillo, precioPlatillo) values (10, 'T.Canasta', '$141.06');
+insert into Platillo (idPlatillo, nombrePlatillo, precioPlatillo) values (11, 'T.Chicharron', '$72.31');
+insert into Platillo (idPlatillo, nombrePlatillo, precioPlatillo) values (12, 'T.Tripa', '$122.03');
+insert into Platillo (idPlatillo, nombrePlatillo, precioPlatillo) values (13, 'T.Cochinita', '$69.49');
+insert into Platillo (idPlatillo, nombrePlatillo, precioPlatillo) values (14, 'Arrachera', '$54.45');
+insert into Platillo (idPlatillo, nombrePlatillo, precioPlatillo) values (15, 'T.Barbacoa', '$61.91');
