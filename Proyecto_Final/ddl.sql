@@ -10,7 +10,7 @@ CREATE DATABASE [Taqueria]
 ON PRIMARY
 (
 NAME = 'Taqueria',
-FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL14.EMILIANOFS\MSSQL\DATA\Taqueria.mdf',
+FILENAME = '/fbd/ProyectoFinal/Taqueria.mdf',
 SIZE = 10MB,
 MAXSIZE = UNLIMITED,
 FILEGROWTH = 50 %
@@ -18,7 +18,7 @@ FILEGROWTH = 50 %
 LOG ON
 (
 NAME = 'Taqueria_Log',
-FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL14.EMILIANOFS\MSSQL\DATA\Taqueria_Log.ldf',
+FILENAME = '/fbd/ProyectoFinal/Taqueria_Log.mdf',
 SIZE = 2MB,
 MAXSIZE = 100MB,
 FILEGROWTH = 2MB
@@ -70,7 +70,7 @@ CREATE TABLE Mesero (
 	PRIMARY KEY (CURP),
 	FOREIGN KEY (idSucursal) REFERENCES Sucursal(idSucursal)
 );
-	
+
 
 CREATE TABLE Cajero (
 	CURP nchar(18) UNIQUE NOT NULL,
@@ -102,7 +102,7 @@ CREATE TABLE Taquero (
 	nomina money NOT NULL,
 	PRIMARY KEY (CURP),
 	FOREIGN KEY (idSucursal) REFERENCES Sucursal(idSucursal)
-	
+
 );
 
 CREATE TABLE Repartidor (
@@ -118,7 +118,7 @@ CREATE TABLE Repartidor (
 	numSeguridad int NOT NULL,
 	nomina money NOT NULL,
 	numlic int NOT NULL,
-	transporte nvarchar(255) NOT NULL, 
+	transporte nvarchar(255) NOT NULL,
 	PRIMARY KEY (CURP),
 	FOREIGN KEY (idSucursal) REFERENCES Sucursal(idSucursal)
 
@@ -129,7 +129,7 @@ CREATE TABLE BonoRepartidor (
 	numBono int NOT NULL,
 	FOREIGN KEY (CURP) REFERENCES Repartidor(CURP)
 );
-	
+
 CREATE TABLE BonoParrillero (
 	CURP nchar(18) UNIQUE NOT NULL,
 	numBono int NOT NULL,
@@ -148,7 +148,7 @@ CREATE TABLE BonoCajero (
 	FOREIGN KEY (CURP) REFERENCES Cajero(CURP)
 );
 
-CREATE TABLE   (
+CREATE TABLE BonoTaquero  (
 	CURP nchar(18) UNIQUE NOT NULL,
 	numBono int NOT NULL,
 	FOREIGN KEY (CURP) REFERENCES Taquero(CURP)
