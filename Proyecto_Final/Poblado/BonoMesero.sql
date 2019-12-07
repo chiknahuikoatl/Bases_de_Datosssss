@@ -1,0 +1,15 @@
+use Taqueria;
+insert into BonoMesero (CURP,numBono) values ('GIHR19981228MRTIO1', 1);
+insert into BonoMesero (CURP,numBono) values ('CAHD19941011MDNOI4', 2);
+insert into BonoMesero (CURP,numBono) values ('WOGL19931227MLOOO7', 3);
+insert into BonoMesero (CURP,numBono) values ('FESP19861028MPRAR9', 4);
+insert into BonoMesero (CURP,numBono) values ('TOTP19971212MPMOE6', 5);
+insert into BonoMesero (CURP,numBono) values ('DEGR19931123MRLEI1', 6);
+insert into BonoMesero (CURP,numBono) values ('SMSL19941112FLYTE2', 7);
+insert into BonoMesero (CURP,numBono) values ('WALC19841027MCTAH1', 8);
+insert into BonoMesero (CURP,numBono) values ('ROPF19971228FFSIA5', 9);
+insert into BonoMesero (CURP,numBono) values ('FORT19901122MTUOE8', 10);
+insert into BonoMesero (CURP,numBono) values ('MOIL19941016FLSNU8', 12);
+insert into BonoMesero (CURP,numBono) values ('THCD19901220MDOAA8', 13);
+insert into BonoMesero (CURP,numBono) values ('DEVC19901013FCEAO7', 14);
+insert into BonoMesero (CURP,numBono) values ('JABD19821226MDHRU2', 15);

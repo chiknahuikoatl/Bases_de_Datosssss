@@ -47,12 +47,12 @@ CREATE TABLE Parrillero (
 	apellidoP nvarchar(255) NOT NULL,
 	apellidoM nvarchar(255) NOT NULL,
 	edad int NOT NULL,
-	tipoSangreP nchar(3) NOT NULL,
+	tipoSangre nchar(3) NOT NULL,
 	fechaInicio datetime NOT NULL,
 	numSeguridad int NOT NULL,
 	nomina money NOT NULL,
 	PRIMARY KEY (CURP),
-	FOREIGN KEY (idSucursal) REFERENCES Sucursal(idSucursal),
+	FOREIGN KEY (idSucursal) REFERENCES Sucursal(idSucursal)
 );
 
 CREATE TABLE Mesero (
@@ -63,12 +63,13 @@ CREATE TABLE Mesero (
 	apellidoP nvarchar(255) NOT NULL,
 	apellidoM nvarchar(255) NOT NULL,
 	edad int NOT NULL,
-	tipoSangreM nchar(3) NOT NULL,
+	tipoSangre nchar(3) NOT NULL,
 	fechaInicio datetime NOT NULL,
 	numSeguridad int NOT NULL,
 	nomina money NOT NULL,
 	PRIMARY KEY (CURP),
-	FOREIGN KEY (idSucursal) REFERENCES Sucursal(idSucursal),
+	FOREIGN KEY (idSucursal) REFERENCES Sucursal(idSucursal)
+);
 	
 
 CREATE TABLE Cajero (
@@ -79,12 +80,12 @@ CREATE TABLE Cajero (
 	apellidoP nvarchar(255) NOT NULL,
 	apellidoM nvarchar(255) NOT NULL,
 	edad int NOT NULL,
-	tipoSangreC nchar(3) NOT NULL,
+	tipoSangre nchar(3) NOT NULL,
 	fechaInicio datetime NOT NULL,
 	numSeguridad int NOT NULL,
 	nomina money NOT NULL,
 	PRIMARY KEY (CURP),
-	FOREIGN KEY (idSucursal) REFERENCES Sucursal(idSucursal),
+	FOREIGN KEY (idSucursal) REFERENCES Sucursal(idSucursal)
 );
 
 CREATE TABLE Taquero (
@@ -95,12 +96,12 @@ CREATE TABLE Taquero (
 	apellidoP nvarchar(255) NOT NULL,
 	apellidoM nvarchar(255) NOT NULL,
 	edad int NOT NULL,
-	tipoSangreT nchar(3) NOT NULL,
+	tipoSangre nchar(3) NOT NULL,
 	fechaInicio datetime NOT NULL,
 	numSeguridad int NOT NULL,
 	nomina money NOT NULL,
 	PRIMARY KEY (CURP),
-	FOREIGN KEY (idSucursal) REFERENCES Sucursal(idSucursal),
+	FOREIGN KEY (idSucursal) REFERENCES Sucursal(idSucursal)
 	
 );
 
@@ -112,14 +113,14 @@ CREATE TABLE Repartidor (
 	apellidoP nvarchar(255) NOT NULL,
 	apellidoM nvarchar(255) NOT NULL,
 	edad int NOT NULL,
-	tipoSangreR nchar(3) NOT NULL,
+	tipoSangre nchar(3) NOT NULL,
 	fechaInicio datetime NOT NULL,
 	numSeguridad int NOT NULL,
 	nomina money NOT NULL,
 	numlic int NOT NULL,
 	transporte nvarchar(255) NOT NULL, 
 	PRIMARY KEY (CURP),
-	FOREIGN KEY (idSucursal) REFERENCES Sucursal(idSucursal),
+	FOREIGN KEY (idSucursal) REFERENCES Sucursal(idSucursal)
 
 );
 
@@ -147,7 +148,7 @@ CREATE TABLE BonoCajero (
 	FOREIGN KEY (CURP) REFERENCES Cajero(CURP)
 );
 
-CREATE TABLE BonoTaquero (
+CREATE TABLE   (
 	CURP nchar(18) UNIQUE NOT NULL,
 	numBono int NOT NULL,
 	FOREIGN KEY (CURP) REFERENCES Taquero(CURP)
@@ -185,7 +186,7 @@ CREATE TABLE SolicitarPrNP (
 	cantidadProducto int NOT NULL,
 	fechaCompra datetime NOT NULL
 	FOREIGN KEY (idSucursal) REFERENCES Sucursal(idSucursal),
-	FOREIGN KEY (idProducto) REFERENCES ProductoPerecedor(idProducto)
+	FOREIGN KEY (idProducto) REFERENCES ProductoNoPerecedor(idProducto)
 );
 
 CREATE TABLE Proveedor (
