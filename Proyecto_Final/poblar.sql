@@ -1542,7 +1542,7 @@ insert into ClienteE (idClienteE, nombre, calle, avenida, numExt, CPC) values (6
 insert into ClienteE (idClienteE, nombre, calle, avenida, numExt, CPC) values (6179, 'Carmen', 'Springview', 'Blackbird', '972', 45838);
 insert into ClienteE (idClienteE, nombre, calle, avenida, numExt, CPC) values (6254, 'Carey', 'Paget', 'Eggendart', '52348', 47127);
 insert into ClienteE (idClienteE, nombre, calle, avenida, numExt, CPC) values (9902, 'Daphna', 'Northwestern', 'Corscot', '609', 81753);
-insert into ClienteE (idClienteE, nombre, calle, avenida, numExt, CPC) values (9522, 'Katey', 'Sherman', 'Oriole', '2', 86723);
+insert into ClienteE (idClienteE, nombre, calle, avenida, numExt, CPC) values (9521, 'Katey', 'Sherman', 'Oriole', '2', 86723);
 insert into ClienteE (idClienteE, nombre, calle, avenida, numExt, CPC) values (4314, 'Charmian', 'Little Fleur', 'Elgar', '084', 57594);
 insert into ClienteE (idClienteE, nombre, calle, avenida, numExt, CPC) values (2124, 'Harlin', 'Melvin', 'Nobel', '3', 65570);
 insert into ClienteE (idClienteE, nombre, calle, avenida, numExt, CPC) values (4838, 'Iormina', 'Lotheville', 'John Wall', '38143', 91183);
